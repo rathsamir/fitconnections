@@ -1,0 +1,186 @@
+<?php
+/**
+ * Profile view template
+ *
+ */
+?>
+<?php $_helper = $this->helper('athletes'); ?>
+<?php $_profile = $this->getCurrentProfile();
+ ?>
+
+<div class="product-view">
+  <div class="product-essential">
+    <div class="product-shop">
+      <div class="product-img-box"> <!--style="float:left;width:457px;margin-right:20px" -->
+        <?php 
+                         $media = $_profile->getMedia();
+                         $mediaUrl=$this->getMediaUrl($media);
+                   
+                           if ($media) {
+                                       $mediaUrl= Mage::helper('athletes')->resizeImg($media, 456,650,1);
+                                        //$mediaUrl=$this->getMediaUrl($media);
+                              }
+
+
+$html = '<img src="' . $mediaUrl . '" />';echo $html;?>
+      </div>
+      <div class="profileinfo"> <!--style="float:left;width:400px" -->
+        <h1><?php echo $_profile->getAthletesName(); ?></h1>
+        <p>
+          <?php if ($_profile->getAthletesAge()):?>
+            <b><?php echo $this->__('Age:');?></b> <?php echo $_profile->getAthletesAge();?>
+          <?php endif;?>
+        <b><?php echo $this->__('Height: ') ?></b><?php echo $_profile->getAthletesHeight();?>
+        <b><?php echo $this->__('Weight: ') ?></b> <?php echo $_profile->getAthletesWeight();?>
+      <?php if ($_profile->getSports()):?>
+            <b><?php echo Mage::helper('athletes')->__('Sport:');?></b> <?php echo $_profile->getSports();?>
+            <?php endif;?>
+       <?php if ($_profile->getResidence()):?>
+	<b><?php echo $this->__('Resides:') ?></b><?php echo $_profile->getResidence();?>
+       <?php endif;?>
+        </p>
+         <?php if ($_profile->getCarrerHighlight()):?>
+        <p><b><?php echo $this->__('Career Highlights: ') ?></b><?php echo $_profile->getCarrerHighlight();?></p><?php endif;?>
+         <?php if ($_profile->getCarrerPath()):?>
+        <p><b><?php echo $this->__('Career athletic path: ') ?></b><?php echo $_profile->getCarrerPath();?></p><?php endif;?>
+        <?php if ($_profile->getFunFacts()):?>
+        <p><b><?php echo $this->__('Fun facts: ') ?></b><?php echo $_profile->getFunFacts();?></p><?php endif;?>
+        <?php if ($_profile->getFavoritePiece()):?>
+        <p><b><?php echo $this->__('Favorite AR piece: ') ?></b><?php echo $_profile->getFavoritePiece();?></p><?php endif;?>
+        <p><b><?php echo $this->__('Accomplishments: ') ?></b><?php echo $_profile->getAccomplishments();?></p>
+        <?php if ($_profile->getFavFood()):?>
+        <p><b><?php echo $this->__('Favorite Pre: ') ?></b><?php echo $_profile->getFavFood();?></p>
+        <?php endif; ?>
+        <?php if ($_profile->getFavPost()):?>
+        <p><b><?php echo $this->__('Favorite Post: ') ?></b><?php echo $_profile->getFavPost();?></p>
+        <?php endif; ?>
+        <?php if ($_profile->getFavBrand()):?>
+        <p><b><?php echo $this->__('Favorite Band: ') ?></b><?php echo $_profile->getFavBrand();?></p>
+        <?php endif; ?>
+        <?php if ($_profile->getBucketList()):?>
+        <p><b><?php echo $this->__('Bucket List: ') ?></b><?php echo $_profile->getBucketList();?></p>
+        <?php endif; ?>
+        <?php if ($_profile->getFavFood()):?>
+        <p><b><?php echo $this->__('Favorite quote: ') ?></b><?php echo $_profile->getFavQuote();?></p>
+        <?php endif; ?>
+        <?php if ($_profile->getWebsite()):?>
+        <p><?php echo $_profile->getWebsite();?></p>
+        <?php endif; ?>
+      </div>
+          <div style="clear:both"></div>
+          <div class="profile_bottom">
+            <ul class='tabs'>
+              <li class="active"><a href='#tab1'>Pics</a></li>
+              <li><a href='#tab2'>Stats</a></li>
+            </ul>
+            <div id='tab1' class="pics" >
+            <ul>
+           
+            <?php $images = $_profile->getImageList(); 
+                 ?>
+            <?php if (sizeof($images) > 0) : ?>
+            <?php foreach ($images as $image): ?>
+            <?php  $subtitle = $image['label'];
+                  $media= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'profileimages/athletes' .$image['file'] ;
+        $mediaUrl= Mage::helper('athletes')->resizeImage($image['file'], 250,250);?>
+            <li style="float:left;padding-right:40px;padding-bottom:10px"> 
+              <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'profileimages/athletes' . $image['file']; ?> " 
+            rel="lightbox[rotation]" 
+            title="<?php echo $subtitle; ?>"
+            onclick="return false;"
+        ><img src="<?php echo $mediaUrl; ?>" alt="<?php echo $subtitle; ?>"
+        /></a>
+
+              </li>
+             
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </ul>
+            </div>
+            <div class="stats" id="tab2" style="display:none;">
+              <p><b><?php echo $this->__('Name: ') ?></b><?php echo $_profile->getAthletesName();?></p>
+              <p><b><?php echo $this->__('Height: ') ?></b><?php echo $_profile->getAthletesHeight();?></p>
+              <p><b><?php echo $this->__('Weight: ') ?></b><?php echo $_profile->getAthletesWeight();?></p>
+              <p><b><?php echo $this->__('Resides: ') ?></b><?php echo $_profile->getResidence();?></p>
+              <p><b><?php echo $this->__('Accomplishments: ') ?></b><?php echo $_profile->getAccomplishments()?></p>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="more-views">
+    <?php echo $this->__('More Views') ?>
+    <ul>
+    <?php foreach ($images as $_image): ?>
+	<?php
+	$subtitle = $image['label'];
+        $media= Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'profileimages/athletes' .$image['file'] ;
+        $mediaUrl= Mage::helper('athletes')->resizeImage($image['file'], 600,800);
+    ?>
+    <li>
+        <a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'profileimages/athletes' . $image['file']; ?> " 
+            rel="lightbox[rotation]" 
+            title="<?php echo $subtitle; ?>"
+            onclick="return false;"
+        ><img src="<?php echo $mediaUrl;?>" alt="<?php echo $subtitle; ?>"
+        /></a>
+    </li>
+    <?php endforeach; ?>
+    </ul>
+</div>-->
+
+
+<script type="text/javascript">
+function initLightbox(){
+    new Lightbox({
+        fileLoadingImage: '<?php echo $this->getSkinUrl('images/lightbox/loading.gif') ?>',
+        fileBottomNavCloseImage: '<?php echo $this->getSkinUrl('images/lightbox/closelabel.gif')?>',
+        overlayOpacity: 0.8,
+        animate: 1,
+        resizeSpeed: 7,
+        borderSize: 10,
+        labelImage: 'Image',
+        labelOf: 'of'
+    });
+}
+
+
+if (Prototype.Browser.IE) {
+    Event.observe(window, 'load', function(){ //KB927917 fix
+        initLightbox();
+    });
+} else {
+    document.observe("dom:loaded", function(){
+        initLightbox();
+    });
+}
+</script>
+<script type="text/javascript">
+		jQuery(document).ready(function(){
+			/*jQuery('ul.tabs').each(function(){
+				var $active, $content, $links = jQuery(this).find('a');
+				$active = jQuery($links.filter('[href="'+location.hash+'"]')[0] || $links[0]);
+				$active.addClass('active');
+				$content = jQuery($active[0].hash);
+				$links.not($active).each(function () {
+					jQuery(this.hash).hide();
+				});
+				jQuery(this).on('click', 'li', function(e){
+					$active.removeClass('active');
+					$content.hide();
+					$active = jQuery(this);
+					$content = jQuery(this.hash);
+					$active.addClass('active');
+					$content.show();
+					e.preventDefault();
+				});
+			});*/
+			jQuery('ul.tabs li').click(function(e){
+				e.preventDefault();
+				if(jQuery(this).hasClass('active')) return;
+				jQuery(this).addClass('active').siblings('li').removeClass('active');
+				jQuery(jQuery(this).find('a').attr('href')).show().addClass('active').siblings('div').hide().removeClass('active');
+			});
+                       jQuery('.pics').perfectScrollbar({suppressScrollX: true});
+		});
+	</script>

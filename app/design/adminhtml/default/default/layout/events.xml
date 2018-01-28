@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <events_adminhtml_events_index>
+        <reference name="content">
+            <block type="events/adminhtml_events" name="events" />
+        </reference>
+    </events_adminhtml_events_index>
+	<events_adminhtml_events_edit>
+		<reference name="head">
+            <action method="addJs"><file>lib/uploader/flow.min.js</file></action>
+            <action method="addJs"><file>lib/uploader/fusty-flow.js</file></action>
+            <action method="addJs"><file>lib/uploader/fusty-flow-factory.js</file></action>
+            <action method="addJs"><file>mage/adminhtml/uploader/instance.js</file></action>
+         </reference>
+</events_adminhtml_events_edit>
+</layout>

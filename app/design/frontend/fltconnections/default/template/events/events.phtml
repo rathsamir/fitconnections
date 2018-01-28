@@ -1,0 +1,97 @@
+<link rel="stylesheet" type="text/css" href="http://fltconnections.com/css/style.css" />
+<style>
+.mw_clear {
+	clear: both;
+	width: 100%;
+}
+</style>
+<script>
+	  jQuery( document ).ready(function() {
+        jQuery('ul.products-grid li').each(function(i,e){
+			if(i>0 && (i+1)%3==0){
+				jQuery(this).addClass("last");
+				}
+			});
+	  });
+	  
+	  /*jQuery( document ).ready(function() {
+        jQuery('ul.products-grid li:nth-of-type(3n)').addClass("last");
+	  });*/
+	
+	  <?php /*?>jQuery(document).ready(function(){
+		jQuery(".bcontainer").hover(function(){
+			jQuery(this).find(".bimage").stop(true).slideUp();
+			},function(){
+				jQuery(this).find(".bimage").slideDown();
+			});
+       });<?php */?>
+	   
+	   jQuery(document).ready(function(){
+		/*jQuery(".bcontainer").hover(function(){
+			jQuery(this).find(".bimage").stop(true).slideUp();
+			},function(){
+				jQuery(this).find(".bimage").slideDown();
+			});*/
+     		jQuery(".bcontainer").hover(function(){
+	    		    jQuery(this).find(".bimage").stop(true).animate({height:0,top:350},'slow');
+		    	},function(){
+			    	jQuery(this).find(".bimage").animate({height:350,top:0},'slow');
+			});
+
+       });
+	  </script>
+<?php
+        $events = $this->getEvents();
+        $events->getSelect()->order('events_id'); 
+      
+        $_totalCategories = $events->count();
+        $eventsCollection = $events->getData();
+    
+  ?>
+<div class="category-products">
+  <div class="product-essential">
+    <h2 class="events-heading"><?php echo Mage::helper('events')->__('Event Listing');?></h2>
+    <div class="clrBoth"></div>
+    <?php //if ($i++%$_columnCount==0): ?>
+    <?php //for ($j=0; $j < $_totalCategories; $j++):?>
+    <ul class="products-list">
+      <?php $i=0; foreach ($eventsCollection as $events):  ?>
+      <li>
+        <?php
+            $path = $events['event_image'];
+			$image = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA). $path;
+            $profileUrl=Mage::getUrl("*/*/view", array('id' => $events['id']));
+            //$mediaUrl=$this->getMediaUrl($media);
+            /*if ($media) {
+            $mediaUrl= Mage::helper('events')->resizeImg($media,294,NULL);
+            }*/?>
+        <?php // Product Image ?>
+         	<div class="event-box">
+						<div class="row">
+							<div class="col-md-3">
+									  <a href="event_gallery.php?event_id=<?php echo $events['id']; ?>"> <img src="<?php echo $image ?>" width="299px" height="178px" alt="" /></a>
+							 </div>
+							  <div class="col-md-6">
+									<h3><?php echo $events['title'];  ?></h3>
+									<span><?php echo stripslashes($events['description']) ?></span>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis non magna Quisque tempor molestie neque, quis tempus urna. Integer pharetra tempus...</p>
+									<a href="event_gallery.php?event_id=<?php echo $events['id']; ?>" class="view-gallery">View Gallery </a>
+							  </div>
+						</div><!--/.row-->  
+			</div><!--/.event-box-->
+        <?php /*?><a href="<?php echo $profileUrl ?>" title="<?php //echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" ><img src="<?php echo $mediaUrl; ?>"  alt="<?php echo $profileUrl ?>" />
+        <h2 class="product-name"><?php echo $athlete->getAthletesName(); ?></h2>
+        <div style="display:none" class="binfo">
+          <b>Name:</b><?php echo $athlete->getAthletesName();?><br>
+          <b>Age:</b> <?php echo $athlete->getAthletesAge();?><br>
+          <b>Height:</b><?php echo $athlete->getAthletesHeight();?><br>
+          <b>Weight:</b> <?php echo $athlete->getAthletesWeight();?><br>
+          <b>Resides:</b><?php echo $athlete->getResidence();?><br>
+          <b>Accomplishments:</b><?php echo $athlete->getAccomplishments();?> <br>
+        </div>
+        </a><?php */?></li>
+      <?php endforeach; ?>
+    </ul>
+    <?php //endfor;?>
+  </div>
+</div>
