@@ -3160,6 +3160,30 @@ body {
 /* ============================================ *
  * Header
  * ============================================ */
+ .contry-changer{padding: 12px 0;}
+ .contry-changer .form-group{ width: 83%}
+ .contry-changer label{
+  text-transform: uppercase;
+  font-weight: 700;
+ }
+ .dd-arrow{
+  background: #ecf0f1 url("../images/dd_arrow.png") no-repeat 90% center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-width: 65%;
+ }
+ .account-btns{
+  padding: 12px 0;
+ }
+
+ .account-btns .btn-default{
+    background-color: #ecf0f1;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+ 
 @media only screen and (min-width: 771px) {
   .page-header {
     max-width: 1260px;
