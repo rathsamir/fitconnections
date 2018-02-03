@@ -101,7 +101,7 @@ body {
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
 a:focus {
-  outline: thin dotted;
+  outline: none;
 }
 
 /*
@@ -110,6 +110,7 @@ a:focus {
 a:active,
 a:hover {
   outline: 0;
+  text-decoration: none;
 }
 
 /* ==========================================================================
@@ -3482,7 +3483,7 @@ a.skip-link {
   #header-nav {
     display: block;
     /* Force visibility */
-    border-bottom: 1px solid #ededed;
+    /*border-bottom: 1px solid #ededed;*/
   }
 }
 /* ============================================ *
@@ -3672,20 +3673,24 @@ a.skip-link {
 /* ============================================ *
  * Search - Skip Content
  * ============================================ */
+ .search-block{ position: relative;}
+ .icon-search{
+  background: url("../images/icon_search.png") no-repeat 0 0;
+  display: block;
+  width: 24px;
+  height: 24px;
+  }
 #header-search {
-  padding: 20px;
+  padding: 10px;
 }
 
 @media only screen and (min-width: 771px) {
   #header-search {
     display: block;
-    /*position: absolute;*/
-    top: 55px;
+    position: absolute;
+    top: 100%;
     right: 0;
-    width: 25%;
-    height: 50px;
-    padding: 0;
-    float: left;
+    width: 250px;
   }
 }
 /* ============================================ *
@@ -3760,6 +3765,8 @@ a.skip-link {
     display: inline-block;
     padding: 0 10px;
     text-transform: uppercase;
+    color: #535252;
+    margin-top: 12px
   }
 
   #header-account.skip-active {
@@ -3768,8 +3775,8 @@ a.skip-link {
     display: block;
     position: absolute;
     z-index: 200;
-    top: 40px;
-    right: 115px;
+    top: 100%;
+    right: 0;
     width: 200px;
   }
 
@@ -3828,7 +3835,7 @@ a.skip-link {
     display: block;
     position: absolute;
     z-index: 200;
-    top: 40px;
+    top: 100%;
     right: 0;
     width: 320px;
     background: white;
@@ -3838,18 +3845,19 @@ a.skip-link {
  * Skip Cart Notifier
  */
 .skip-cart .count {
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
-  border-radius: 12px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
   display: inline-block;
-  top: -6px;
-  position: relative;
+  top: -5px;
+  right: -7px;
+  position: absolute;
   z-index: 5;
   width: 22px;
   height: 22px;
-  background: rgba(51, 153, 204, 0.9);
+  background:#0c77b1;
   color: #FFFFFF;
   font-size: 11px;
   line-height: 22px;
@@ -3862,7 +3870,7 @@ a.skip-link {
 }
 
 .skip-cart.no-count .count {
-  display: none;
+  /*display: none;*/
 }
 
 @media only screen and (max-width: 499px) {
@@ -3872,13 +3880,15 @@ a.skip-link {
 }
 @media only screen and (min-width: 771px) {
   .skip-cart {
-    color: #3399cc;
+    color: #337ab7;
     text-transform: uppercase;
+    margin-top: 10px;
+    margin-right: 25px;
   }
   .skip-cart:hover {
     text-decoration: none;
   }
-  .skip-cart .count {
+  /*.skip-cart .count {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -ms-border-radius: 0px;
@@ -3889,22 +3899,30 @@ a.skip-link {
     margin-left: 0px;
     font-size: 14px;
     width: auto;
+    background-color: #0c77b1;
   }
   .skip-cart .count:before {
     content: '(';
   }
   .skip-cart .count:after {
     content: ')';
-  }
+  }*/
 
   .skip-cart .count,
   .skip-link.skip-active .count {
-    color: #3399cc;
+    color: #ffffff;
   }
 }
 .skip-cart .count.empty {
   display: none;
 }
+.skip-cart i{
+  background: url("../images/shopping_bag.png") no-repeat 0 0;  
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+}
+
 
 /* -------------------------------------------- *
  * Mini Cart - Empty
@@ -3988,6 +4006,44 @@ a.skip-link {
 /* -------------------------------------------- *
  * Footer
  */
+ .footer-row{
+    border-top:1px solid #bdc3c7;
+    padding-top: 28px;
+  }
+  .footer-box{}
+  .footer-box h1{ text-transform: none; font-size: 16px; color: #0c77b1; margin:0 0 12px 0; font-weight: 700}
+  .footer-box ul{ margin:0 0 0 15px }
+  .footer-box.no-list-style ul{
+    margin: 0 0 15px 0;
+  }
+  .footer-box ul li{ list-style:initial; font-size: 14px; color: #777777; padding-bottom: 10px}
+  .footer-box.no-list-style ul li{ list-style: none;}
+  .footer-box ul li:last-child{ padding-bottom: 0;}
+  .footer-box ul li a{font-size: 14px; color: #777777; text-align: center;}
+ .facebook-icon,.linked-icon,.twitter-icon,.instagram-icon{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+ } 
+ .facebook-icon{ background-color: #4e71a8;}
+ .linked-icon{ background-color: #005f86;}
+ .twitter-icon{ background-color: #1cb7eb;}
+ .instagram-icon{ background-color: #59453d;}
+ .facebook-icon i,.linked-icon i,.twitter-icon i,.instagram-icon i{
+    font-size: 1.3em;
+    color: #ffffff;
+    position: relative;
+    transform: translateY(32%);
+    -webkit-transform: translateY(32%);
+    -ms-transform: translateY(32%);
+    -o-transform: translateY(32%);
+ }
 .footer,
 .footer button {
   font-family: 'Open Sans', sans-serif;
@@ -3998,9 +4054,37 @@ a.skip-link {
   width: 100%;
   border-top: 1px solid #cccccc;
   padding-top: 30px;
-  /* -------------------------------------------- *
-   * Social icons
-   */
+}
+.site-disclaimer{
+  padding: 30px 0;
+  margin-top: 20px;
+  border-top:1px solid #85bbd8;
+}
+.site-disclaimer p{
+  font-size: 14px;
+  color: #000000;
+  line-height: 26px;
+}
+.copy-right-block{
+  background-color: #ecf0f1;
+  border-top: 1px solid #bdc3c7;
+  padding: 30px 0;
+}
+.copy-text{
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
+}
+.footer-links{
+  text-align: right;
+  font-size: 14px;
+  color: #000000;
+}
+.footer-links a{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #000000;
 }
 @media only screen and (max-width: 479px) {
   .footer {
@@ -10625,6 +10709,7 @@ div.calendar table td.button {
   text-transform: none;
 }
 .nav-wrapper{
-  background-color: #000000; 
+  background-color: #000000;
+  padding: 10px 0; 
  }
  

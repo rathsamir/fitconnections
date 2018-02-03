@@ -90,19 +90,21 @@
 
                             <div class="account-cart-wrapper">
                                 <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-                                    <span class="icon"></span>
-                                    <span class="label"><?php echo $this->__('Account'); ?></span>
+                                <i class="fa fa-user-circle-o fa-2x"></i>
+                                    <!-- <span class="icon"></span> -->
+                                    <!-- <span class="label"><?php echo $this->__('Account'); ?></span> -->
                                 </a>
                                 <!-- Cart -->
                                 <div class="header-minicart">
                                     <?php echo $this->getChildHtml('minicart_head'); ?>
                                 </div>
+                                 <!-- Account -->
+                                <div id="header-account" class="skip-content">
+                                    <?php echo $this->getChildHtml('topLinks') ?>
+                                </div> 
                             </div>
                         </div>
-                         <!-- Account -->
-                        <div id="header-account" class="skip-content">
-                            <?php echo $this->getChildHtml('topLinks') ?>
-                        </div>  
+                        
                     </div>
                 </div>
             </div>
@@ -114,12 +116,16 @@
     <div class="nav-wrapper">
         <div class="container">    
             <!-- Navigation -->
-            <div id="header-nav" class="skip-content">
+            <div id="header-nav" class="skip-content clearfix">
                 <?php echo $this->getChildHtml('topMenu') ?>
                 <!-- Search -->
-                <div id="header-search" class="skip-content pull-right">
-                    <?php echo $this->getChildHtml('topSearch') ?>
+                <div class="search-block pull-right">
+                    <a href="javascript:;" class="icon-search"></a>
+                    <div id="header-search" class="skip-content">
+                        <?php echo $this->getChildHtml('topSearch') ?>
+                    </div>
                 </div>
+                
             </div>
         </div>
     </div>
