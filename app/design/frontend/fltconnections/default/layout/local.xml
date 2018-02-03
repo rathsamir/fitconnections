@@ -23,6 +23,8 @@
 			<action method="addItem"> <type>skin_css</type> <stylesheet>css/bootstrap.min.css</stylesheet> </action>
 			<!-- Adding font Awesome -->
 			<action method="addItem"> <type>skin_css</type> <stylesheet>css/font-awesome.min.css</stylesheet> </action>
+			<!-- Adding animate css -->
+			<action method="addItem"> <type>skin_css</type> <stylesheet>css/animations.css</stylesheet> </action>
 			<!-- Adding the styles.css -->
 			<action method="addItem"> <type>skin_css</type> <stylesheet>css/styles.css</stylesheet> </action>
 		</reference>

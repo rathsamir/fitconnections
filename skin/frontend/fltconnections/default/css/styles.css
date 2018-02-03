@@ -638,13 +638,25 @@ h6, .h6 {
 .product-name h1,
 .product-name .h1 {
   text-transform: uppercase;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
   color: #636363;
   border-bottom: 1px solid #ededed;
   padding-bottom: 3px;
   margin-bottom: 15px;
   text-transform: uppercase;
+  padding: 15px;
+}
+.right-body-content .page-title h1,
+.right-body-content .page-title h2{
+  font-size: 20px;
+  font-weight: 400;
+  color: #636363;
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  padding: 15px 0 0 0;
 }
 
 /* -------------------------------------------- *
@@ -912,7 +924,46 @@ body:not(.customer-account) .block:first-child .block-title {
 .sidebar .actions button.button {
   white-space: normal;
 }
-
+.left-sidebar{ padding: 15px 0 0 0}
+.left-sidebar .block-title{
+  margin-bottom: 30px;
+}
+.left-sidebar .block-title span{
+  font-size: 20px;
+}
+.left-sidebar .block-content ul li{ margin: 2px 0; }
+.left-sidebar .block-content ul li a{
+  display: block;
+  padding: 6px 0;
+  position: relative;
+  text-decoration: none;
+}
+.left-sidebar .block-content ul li a:hover{
+  color: #0c77b1;
+  text-decoration: none;
+}
+.left-sidebar .block-content ul li a:after {
+  position: absolute;
+  content: '';
+  bottom:0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #0c77b1;
+  transform-origin:left;
+  -webkit-transform-origin:left;
+  -ms-transform-origin:left;
+  -o-transform-origin:left;
+  transition:width 0.25s ease;
+  -webkit-transition:width 0.25s ease;
+  -ms-transition:width 0.25s ease;
+  -o-transition:width 0.25s ease;
+  z-index:1;
+}
+.left-sidebar .block-content ul li a:hover:after,
+.left-sidebar .block-content ul li.current a:after {
+  width: 100%;
+}
 /* Primary Buttons */
 .button,
 .cart-table .product-cart-actions .button,
@@ -1138,7 +1189,7 @@ a.button:hover {
  */
 .breadcrumbs {
   overflow: hidden;
-  margin: -15px 0 15px;
+  margin:10px 0 15px 15px;
 }
 
 .breadcrumbs li {
@@ -1150,7 +1201,7 @@ a.button:hover {
 
 .breadcrumbs a {
   float: left;
-  color: #636363;
+  color: #0c77b1;
 }
 
 .breadcrumbs a:hover {
@@ -3168,7 +3219,7 @@ body {
   font-weight: 700;
  }
  .dd-arrow{
-  background: #ecf0f1 url("../images/dd_arrow.png") no-repeat 90% center;
+  background: #ecf0f1 url("../images/dd_arrow.png") no-repeat 95% center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -3682,15 +3733,19 @@ a.skip-link {
   }
 #header-search {
   padding: 10px;
+  display: none;
+}
+#header-search.highlight{
+  display: block;
 }
 
 @media only screen and (min-width: 771px) {
   #header-search {
-    display: block;
     position: absolute;
     top: 100%;
     right: 0;
     width: 250px;
+    z-index: 1;
   }
 }
 /* ============================================ *
@@ -3851,8 +3906,8 @@ a.skip-link {
   -o-border-radius: 50%;
   border-radius: 50%;
   display: inline-block;
-  top: -5px;
-  right: -7px;
+  top: -4px;
+  right: -6px;
   position: absolute;
   z-index: 5;
   width: 22px;
@@ -7881,7 +7936,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 }
 .customer-account-create .fieldset,
 .customer-account-create .buttons-set {
-  margin-left: 30px;
+  /*margin-left: 30px;*/
 }
 @media only screen and (max-width: 479px) {
   .customer-account-create .fieldset,
@@ -10712,4 +10767,12 @@ div.calendar table td.button {
   background-color: #000000;
   padding: 10px 0; 
  }
- 
+ .btn-primary,.button{
+  background-color: #0c77b1;
+  border:1px solid #1981b9;
+ }
+ .account-login{
+  padding-bottom: 30px
+ }
+ .benefits{ margin-left: 15px;}
+ .benefits li{ list-style: initial; margin-bottom: 10px;}
