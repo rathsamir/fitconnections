@@ -47,14 +47,18 @@
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="container">
-            <div class="row">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-                <div class="body-content-wrapper">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+        <div class="page-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo $this->getChildHtml('breadcrumbs') ?>
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="body-content-wrapper">
+            <?php echo $this->getChildHtml('content') ?>
         </div>
         <?php echo $this->getChildHtml('footer_before') ?>
         <?php echo $this->getChildHtml('footer') ?>
