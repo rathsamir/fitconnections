@@ -924,7 +924,7 @@ body:not(.customer-account) .block:first-child .block-title {
 .sidebar .actions button.button {
   white-space: normal;
 }
-.left-sidebar{ padding: 15px 0 0 0}
+.left-sidebar{ padding-top: 15px}
 .left-sidebar .block-title{
   margin-bottom: 30px;
 }
@@ -2610,6 +2610,7 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
 .fieldset + .fieldset {
   margin-top: 5px;
 }
+.my-account{ margin-bottom: 30px}
 
 form .legend {
   margin: 0;
@@ -3536,6 +3537,9 @@ a.skip-link {
   top: 0px;
   right: 0px;
 }
+.skip-account.skip-active{
+  color: #0c77b1;
+}
 @media only screen and (max-width: 770px) {
   .account-cart-wrapper {
     position: static;
@@ -3874,46 +3878,38 @@ a.skip-link {
     color: #535252;
     margin-top: 12px
   }
-
-  #header-account.skip-active {
-    background: #FBFBFB;
-    border: solid 1px #cccccc;
-    display: block;
-    position: absolute;
-    z-index: 200;
-    top: 100%;
-    right: 0;
-    width: 200px;
-  }
-
-  #header-account a {
-    display: block;
-    padding: 5px 10px;
-    color: #636363;
-    line-height: 2;
-  }
-
-  #header-account a:hover {
-    color: #3399cc;
-  }
 }
 /* -------------------------------------------- *
  * Account Links
  */
 #header-account {
   padding: 5px 0;
+  background: #0c77b1;
+  border:solid 1px #499ee7;
+  position: absolute;
+  z-index: 200;
+  top: 100%;
+  right: 0;
+  width: 200px;
+
+}
+#header-account.skip-active {
+    display: block;
 }
 
-#header-account a {
-  position: relative;
+#header-account ul li a {
   display: block;
   padding: 5px 10px;
+  color: #ffffff;
   line-height: 23px;
-  text-align: center;
+  position: relative;
 }
 
-#header-account a:hover {
-  color: #3399cc;
+#header-account ul li a:hover {
+  color: #c1c7ca;
+}
+#header-account a {
+  display: block;
 }
 
 /* ============================================ *
@@ -7984,6 +7980,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 
 .customer-account-create .buttons-set {
   max-width: 455px;
+  margin-bottom: 30px;
 }
 .customer-account-create .fieldset,
 .customer-account-create .buttons-set {
