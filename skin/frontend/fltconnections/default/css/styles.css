@@ -3588,6 +3588,7 @@ a.skip-link {
 @media only screen and (min-width: 771px) {
   #header-nav {
     display: block;
+    position: relative;
     /* Force visibility */
     /*border-bottom: 1px solid #ededed;*/
   }
@@ -3779,7 +3780,7 @@ a.skip-link {
 /* ============================================ *
  * Search - Skip Content
  * ============================================ */
- .search-block{ position: relative;}
+ .search-block{ position: absolute; right: 0; top: 9px;}
  .icon-search{
   background: url("../images/icon_search.png") no-repeat 0 0;
   display: block;
@@ -3798,7 +3799,7 @@ a.skip-link {
   #header-search {
     position: absolute;
     top: 100%;
-    right: 0;
+    right: -8px;
     width: 250px;
     z-index: 1;
   }
@@ -10813,7 +10814,6 @@ div.calendar table td.button {
 }
 .nav-wrapper{
   background-color: #000000;
-  padding: 10px 0; 
  }
  .btn-primary,.button{
   background-color: #0c77b1;

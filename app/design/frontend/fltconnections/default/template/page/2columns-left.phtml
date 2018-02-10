@@ -47,10 +47,19 @@
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
+        <div class="page-breadcrumb">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <?php echo $this->getChildHtml('breadcrumbs') ?>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="page-wrapper">
             <div class="container">
                 <div class="row">
-                    <?php echo $this->getChildHtml('breadcrumbs') ?>
+                    
                     <?php // This left_first block will display above the main content on smaller viewports ?>
                     <?php if ($_leftContent = $this->getChildHtml('left_first')): ?>
                     <div class="col-md-3 left-sidebar"><?php echo $_leftContent;   ?></div>
