@@ -629,7 +629,61 @@ h6, .h6 {
   color: #df280a;
   margin-bottom: 10px;
 }
+#myCarousel .carousel-inner>.item,
+#myCarousel2 .carousel-inner>.item{ text-align: center;}
 
+#myCarousel .carousel-inner>.item>img{ height: 400px; display: inline-block;}
+#myCarousel2 .carousel-inner>.item>img{ height: 500px; display: inline-block;}
+
+#myCarousel .carousel-indicators,
+#myCarousel2 .carousel-indicators{ text-align: left;}
+#myCarousel .carousel-indicators li,
+#myCarousel2 .carousel-indicators li{
+  width: 36px;
+  border: 0 none;
+  background-color: #cccccc;
+  height: 2px;
+  border-radius: 0;
+  margin: 0 0 0 5px;
+  vertical-align: text-bottom;
+
+}
+#myCarousel .carousel-indicators li.active,
+#myCarousel2 .carousel-indicators li.active{
+  height: 2px;
+  background-color: #3aa6d9;
+}
+.mobility-block{ background-color: red}
+.internet-block{background-color: blue}
+.map-block{ background-color: green}
+.package-block{background-color: black}
+.mobility-block,.internet-block{ height: 329px;}
+.map-block,.package-block{ height: 400px;}
+.block-tag{
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+}
+.mobility-block span{
+  background:#0c77b1 url(../images/icon_mobility.png) no-repeat 7px 50%;
+  padding: 9px 12px 9px 38px;
+}
+.internet-block span{
+  background:#0c77b1 url(../images/icon_internet.png) no-repeat 5px 50%;
+  padding: 9px 12px 9px 42px;
+}
+.map-block span{
+  background:#0c77b1 url(../images/icon_locations.png) no-repeat 5px 50%;
+  padding: 9px 12px 9px 38px;
+}
+.package-block span{
+  background:#0c77b1 url(../images/icon_belltv.png) no-repeat 7px 50%;
+  padding: 9px 12px 9px 46px;
+}
 /* -------------------------------------------- *
  * Page Titles
  */
@@ -645,14 +699,13 @@ h6, .h6 {
   padding-bottom: 3px;
   margin-bottom: 15px;
   text-transform: uppercase;
-  padding: 15px;
+  padding: 15px 0;
 }
 .right-body-content .page-title h1,
 .right-body-content .page-title h2{
-  font-size: 20px;
-  font-weight: 400;
-  color: #636363;
-  border-bottom: 1px solid #ededed;
+  font-size: 25px;
+  font-weight: 600;
+  color: #0c77b1;
   padding-bottom: 3px;
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -713,6 +766,8 @@ body:not(.customer-account) .block:first-child .block-title {
 
 .block-content {
   margin-top: 5px;
+  background-color: #ecf0f1;
+  border:1px solid #bdc3c7;
 }
 
 .block-content.unpad {
@@ -1973,7 +2028,7 @@ span.weee {
   clear: left;
   font-weight: 600;
   padding-right: 5px;
-  font-style: italic;
+  font-style:normal;
 }
 .item-options dt:after {
   content: ': ';
@@ -2175,13 +2230,12 @@ span.weee {
 /* -------------------------------------------- *
  * Toolbar
  */
+.toolbar-bottom{ clear: both;}
 .toolbar {
   margin-top: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   border-bottom: 1px solid #cccccc;
-  border-top: 1px solid #cccccc;
-  background: #f4f4f4;
-  padding: 5px 10px 0px 10px;
+  padding: 5px 10px 10px 10px;
 }
 .toolbar:after {
   content: '';
@@ -2217,6 +2271,8 @@ span.weee {
 .sorter label {
   float: left;
   margin-right: 5px;
+  font-size: 12px;
+  font-weight: 800;
 }
 .sorter label:after {
   content: ':';
@@ -2247,6 +2303,7 @@ span.weee {
 
 .sorter > .view-mode {
   float: right;
+  margin:0; 
 }
 .sorter > .view-mode .grid,
 .sorter > .view-mode .list {
@@ -2269,10 +2326,15 @@ span.weee {
 .sorter > .view-mode a.list:hover {
   background-position: -39px -517px;
 }
-
+.sort-by .dd-arrow{
+    width: 200px;
+    border-radius: 5px;
+    padding: 4px;
+}
 .pager {
   float: right;
   overflow: hidden;
+  margin: 0;
 }
 .pager > .count-container {
   float: left;
@@ -3012,7 +3074,7 @@ form .form-instructions {
 }
 
 .data-table tbody td .item-options {
-  margin-left: 20px;
+  margin-left:0;
   margin-top: 10px;
 }
 .data-table tbody td .item-options dt:after {
@@ -4025,7 +4087,9 @@ a.skip-link {
   height: 30px;
   margin-top: 4px;
 }
-
+.cart-empty{
+  margin-bottom: 20px
+}
 
 /* -------------------------------------------- *
  * Mini Cart - Empty
@@ -4384,6 +4448,10 @@ a.skip-link {
 /* -------------------------------------------- *
  * Product List General
  */
+.product-image img{
+  max-width: 100%;
+  height: auto;
+}
 .category-title h1,
 body.catalogsearch-result-index .page-title h1 {
   border-bottom: none;
@@ -4426,7 +4494,9 @@ h3.product-name a,
 h4.product-name a,
 h5.product-name a,
 p.product-name a {
-  color: #636363;
+    color: #000000;
+    font-weight: 600;
+    font-size: 17px;
 }
 h2.product-name a:hover,
 h3.product-name a:hover,
@@ -4911,11 +4981,9 @@ p.product-name a:hover {
 .block-layered-nav .block-content > dl > dt {
   margin: 0;
   margin-bottom: 10px;
-  color: #636363;
-  
-  font-size: 14px;
-  font-weight: bold;
-  font-style: normal;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
   line-height: 1.4;
   text-rendering: optimizeSpeed;
   text-transform: uppercase;
@@ -4924,14 +4992,9 @@ p.product-name a:hover {
   -webkit-user-select: none;
   -o-user-select: none;
   user-select: none;
-  font-weight: normal;
   margin-bottom: 0px;
-  padding: 7px 10px 7px 24px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #cccccc;
+  padding: 26px 10px 7px 24px;
   position: relative;
-  background-color: #f4f4f4;
   display: block;
 }
 .block-layered-nav .block-content > dl > dt:after {
@@ -4940,26 +5003,17 @@ p.product-name a:hover {
   width: 0;
   height: 0;
   display: block;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-  border-top: 4px solid #3399cc;
-  border-bottom: none;
   left: 10px;
   top: 50%;
   margin-top: -3px;
 }
-.block-layered-nav .block-content > dl > dt:hover {
-  background-color: #ececec;
-}
 .block-layered-nav .block-content > dl > dd {
-  padding: 10px;
+  padding: 0px 25px 15px 27px;
   margin: 0;
-  border-width: 0 1px;
-  border-style: solid;
-  border-color: #cccccc;
+  border-bottom:1px solid #bdc3c7;
 }
 .block-layered-nav .block-content > dl > dd:last-child {
-  border-width: 0 1px 1px 1px;
+  border-bottom: 0 none;
 }
 
 .block-layered-nav dl dd {
@@ -4967,7 +5021,7 @@ p.product-name a:hover {
   margin-top: 10px;
 }
 .block-layered-nav dl dd ol > li > span, .block-layered-nav dl dd ol > li > a {
-  padding: 5px 15px;
+  padding: 5px 0;
   display: block;
 }
 .block-layered-nav dl dd ol > li > a .count {
@@ -4975,9 +5029,6 @@ p.product-name a:hover {
 }
 
 @media only screen and (min-width: 771px) {
-  .block-layered-nav .block-content > dl > dt {
-    padding-left: 10px;
-  }
   .block-layered-nav .block-content > dl > dt:after {
     display: none;
   }
@@ -5107,24 +5158,31 @@ p.product-name a:hover {
   display: block;
   margin: 0;
   margin-bottom: 10px;
-  color: #636363;
-  
+  color: #000000;
   font-size: 14px;
   font-weight: bold;
   font-style: normal;
   line-height: 1.4;
   text-rendering: optimizeSpeed;
   text-transform: uppercase;
+  padding: 15px 0 0 19px
 }
 .block-layered-nav .currently ol {
-  padding-left: 10px;
+  padding-left: 0;
   margin-bottom: 10px;
 }
 .block-layered-nav .currently ol li {
   margin-bottom: 5px;
+  border-bottom: 1px solid #bdc3c7;
+  padding: 6px 10px;
+}
+.block-layered-nav .currently ol li:first-child{
+  border-top: 1px solid #bdc3c7;
 }
 .block-layered-nav .currently ol li .label {
   font-weight: bold;
+  color: #000;
+  font-size: 14px;
 }
 .block-layered-nav .currently ol li:after {
   content: '';
@@ -5140,7 +5198,7 @@ p.product-name a:hover {
 /* ============================================ *
  * Catalog - Product
  * ============================================ */
-.product-view .product-essential .extra-info .ratings .rating-box,
+ .product-view .product-essential .extra-info .ratings .rating-box,
 .product-view .product-essential .extra-info .ratings .amount {
   float: left;
 }
@@ -6580,6 +6638,11 @@ p.product-name a:hover {
 }
 .cart-table .product-cart-sku .label {
   font-weight: 600;
+  color: #000;
+  font-size: 12px;
+  text-align: left;
+  font-style: normal;
+  padding-left: 0;
 }
 .cart-table .btn-empty {
   float: left;
@@ -6648,7 +6711,7 @@ p.product-name a:hover {
   margin-bottom: 5px;
 }
 .cart-table .item-options {
-  padding-left: 15px;
+  padding-left:0;
 }
 
 @media only screen and (max-width: 770px) {
