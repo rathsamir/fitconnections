@@ -653,10 +653,10 @@ h6, .h6 {
   height: 2px;
   background-color: #3aa6d9;
 }
-.mobility-block{ background-color: red}
-.internet-block{background-color: blue}
-.map-block{ background-color: green}
-.package-block{background-color: black}
+.mobility-block{ background: url("../images/phone_blog.jpg") no-repeat 0 0;}
+.internet-block{ background: url("../images/internet_blog.jpg") no-repeat 0 0;}
+.map-block{ background:#edf2f4 url("../images/map_blog.jpg") no-repeat 95% bottom;}
+.package-block{ background: url("../images/package_blog.jpg") no-repeat 0 0; background-size: cover}
 .mobility-block,.internet-block{ height: 329px;}
 .map-block,.package-block{ height: 400px;}
 .block-tag{
@@ -1252,10 +1252,11 @@ a.button:hover {
 .pull-out h2{
     color: #0c77b1;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800;
     font-size: 20px;
     margin: 0 0 35px 0;
 }
+.pull-out img{ display: inline-block;}
 .business-tag{
   background: url("../images/business_tag.png") no-repeat 0 0;
   display: inline-block;
