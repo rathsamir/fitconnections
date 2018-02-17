@@ -940,7 +940,8 @@ body:not(.customer-account) .block:first-child .block-title {
 .block-cms-menu li a:hover {
   color: #3399cc;
 }
-
+.submenu-block{ padding: 0 15px;}
+div.block2{ padding: 0;}
 /* ============================================ *
  * Buttons
  * ============================================ */
