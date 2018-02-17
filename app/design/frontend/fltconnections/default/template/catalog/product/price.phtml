@@ -390,7 +390,7 @@ $_specialPriceStoreLabel = $this->getProductAttribute('special_price')->getStore
 
     <?php endif; /* if ($_finalPrice == $_price): */ ?>
 
-    <?php if ($this->getDisplayMinimalPrice() && $_minimalPriceValue && $_minimalPriceValue < $_convertedFinalPrice): ?>
+    <?php if ($this->getDisplayMinimalPrice() && $_minimalPriceValue < $_convertedFinalPrice): ?>
 
         <?php $_minimalPriceDisplayValue = $_minimalPrice; ?>
         <?php if ($_weeeTaxAmount && $_weeeHelper->typeOfDisplay($_product, array(0, 1, 4))): ?>
