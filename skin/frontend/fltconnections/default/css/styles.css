@@ -684,6 +684,95 @@ h6, .h6 {
   background:#0c77b1 url(../images/icon_belltv.png) no-repeat 7px 50%;
   padding: 9px 12px 9px 46px;
 }
+.mobility-content{
+ position: absolute;
+ right: 15px;
+ bottom: 15px
+}
+.white-text{}
+.white-text span{
+  font-size: 24px;
+  line-height: 100%;
+  color: #fff;
+  font-weight: 600;
+  background: none;
+  text-transform: uppercase;
+  padding: 0;
+}
+.white-text p{
+  font-size: 60px;
+  line-height: 100%;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 !important;
+  text-transform: uppercase;
+}
+.internet-content{
+ position: absolute;
+ right: 15px;
+ bottom: 15px
+}
+.blue-text span{
+  font-size: 24px;
+  line-height: 100%;
+  color: #0c77b1;
+  font-weight: 600;
+  background: none;
+  text-transform: uppercase;
+  padding: 0;
+}
+.blue-text p{
+  font-size: 60px;
+  line-height: 100%;
+  color: #0c77b1;
+  font-weight: bold;
+  margin: 0 !important;
+  text-transform: uppercase;
+}
+.location-content{
+  margin-top: 100px;
+}
+.package-content{
+ position: absolute;
+ right: 15px;
+ bottom: 15px
+}
+.store-list{margin-top: 40px;}
+.store-list ul{
+  list-style: none !important;
+  border:1px solid #98b3c1;
+  background: #ffffff;
+  display: inline-block;
+   width: 270px;
+   margin: 0;
+}
+.store-list ul li{
+  border-bottom:1px solid #98b3c1;
+  margin: 0 !important;
+  overflow: hidden;
+ }
+ .store-list ul li:last-child{ border-bottom: 0 none}
+ .store-list ul li a{ display: block;}
+ .store-list ul li span{
+  padding: 0;
+  background:transparent;
+  font-size: 16px;
+  color: #0c77b1;
+  font-weight: 600;
+  text-transform: uppercase;
+  float: left;
+  padding: 10px;
+ }
+.store-list ul li label{
+  float: right;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #54a0c8;
+  display: block;
+  border-radius: 39px;
+  padding: 2px 5px;
+  margin: 6px 10px 5px 0px
+}
 /* -------------------------------------------- *
  * Page Titles
  */
@@ -940,8 +1029,13 @@ body:not(.customer-account) .block:first-child .block-title {
 .block-cms-menu li a:hover {
   color: #3399cc;
 }
-.submenu-block{ padding: 0 15px;}
+.submenu-block{ padding:15px;}
 div.block2{ padding: 0;}
+.mb25{ margin-bottom: 25px}
+.menu-image img{ display: inline-block;}
+.menu-content img{ margin-bottom: 10px}
+.menu-content p{ font-size: 14px; color: #000;margin-bottom: 10px}
+.menu-content a{ font-size: 13px; font-weight: 600; color: #0c77b1; text-decoration: none; text-transform: uppercase;}
 /* ============================================ *
  * Buttons
  * ============================================ */
@@ -1419,7 +1513,9 @@ a.button:hover {
   float: right;
   margin-left: 6px;
 }
-
+.list-product li:nth-child(odd){
+  clear: left;
+}
 /* -------------------------------------------- *
  * Checkout Agreements
  */
@@ -1936,7 +2032,7 @@ a.button:hover {
 }
 
 .price-box .minimal-price-link {
-  padding-left: 1em;
+  padding-left: 0;
   color: #3399cc;
   display: block;
   /* We want this to show on its own line, otherwise the layout looks funky */
@@ -10121,6 +10217,7 @@ div.paypal-logo span > img {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
+  padding-left: 0;
 }
 
 .map-info {
