@@ -43,5 +43,13 @@
         </action>
       </reference>
     </catalog_category_default>
+	<catalog_product_view>
+      <reference name="product.info">
+        <block type="catalog/product_list_related" name="catalog.product.related" as="related_products" template="catalog/product/list/related.phtml" after="-">
+          <action method="addToParentGroup"><group>detailed_info</group></action>
+          <action method="setTitle" translate="value"><value>Accessories</value></action>
+        </block>
+     </reference>
+   </catalog_product_view>
     
 </layout>

@@ -141,6 +141,21 @@
                     }
                     ?>
                     <?php echo $this->getPriceHtml($_product, true) ?>
+					<div class='colors'>
+					<?php $options = Mage::getModel('catalog/product_option')->getProductOptionCollection($_product);
+
+	foreach ($options as $option) {
+		if ($option->getType() === 'drop_down' && $option->getDefaultTitle()=='Color') {
+			$values = Mage::getSingleton('catalog/product_option_value')->getValuesCollection($option);?>
+		   <span class='color'><?php echo $this->__('AVAILABLE COLORS')?>
+		   <?php
+			foreach ($values as $value) {?>
+				<div class='titlecolor'><?php echo  $value->getTitle()?></div>
+			<?php
+			}
+		}
+	}?>
+	</div>
                     <?php if($_product->getRatingSummary()): ?>
                     <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
                     <?php endif; ?>
