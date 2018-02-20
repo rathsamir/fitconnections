@@ -657,6 +657,7 @@ h6, .h6 {
 .internet-block{ background: url("../images/internet_blog.jpg") no-repeat 0 0;}
 .map-block{ background:#edf2f4 url("../images/map_blog.jpg") no-repeat 95% bottom;}
 .package-block{ background: url("../images/package_blog.jpg") no-repeat 0 0; background-size: cover}
+
 .mobility-block,.internet-block{ height: 329px;}
 .map-block,.package-block{ height: 400px;}
 .block-tag{
@@ -800,7 +801,20 @@ h6, .h6 {
   text-transform: uppercase;
   padding: 15px 0 0 0;
 }
-
+label.titlecolor {
+    font-size: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 7px;
+    margin-bottom: 10px;
+    vertical-align: top;
+    border: 1px solid #bdbcbc;
+}
+.color-title {
+    font-size: 14px;
+    color: #000000;
+}
 /* -------------------------------------------- *
  * Block Module
  */
@@ -1034,8 +1048,14 @@ div.block2{ padding: 0;}
 .mb25{ margin-bottom: 25px}
 .menu-image img{ display: inline-block;}
 .menu-content img{ margin-bottom: 10px}
-.menu-content p{ font-size: 14px; color: #000;margin-bottom: 10px}
+.menu-content p{ font-size: 14px; color: #000; margin-bottom:10px}
 .menu-content a{ font-size: 13px; font-weight: 600; color: #0c77b1; text-decoration: none; text-transform: uppercase;}
+.list-product li:nth-child(odd) {
+    clear: left;
+}
+.list-product > li{ margin-bottom:20px;}
+.list-product > li .product-image{ border: 0 none;}
+
 /* ============================================ *
  * Buttons
  * ============================================ */
@@ -1347,11 +1367,10 @@ a.button:hover {
 .pull-out h2{
     color: #0c77b1;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 600;
     font-size: 20px;
     margin: 0 0 35px 0;
 }
-.pull-out img{ display: inline-block;}
 .business-tag{
   background: url("../images/business_tag.png") no-repeat 0 0;
   display: inline-block;
@@ -1382,6 +1401,7 @@ a.button:hover {
   font-size: 18px;
   padding: 4px 30px;
 }
+.pull-out img{ display:inline-block}
 
 /* -------------------------------------------- *
  * Breadcrumbs
@@ -1513,9 +1533,7 @@ a.button:hover {
   float: right;
   margin-left: 6px;
 }
-.list-product li:nth-child(odd){
-  clear: left;
-}
+
 /* -------------------------------------------- *
  * Checkout Agreements
  */
@@ -2039,6 +2057,7 @@ a.button:hover {
 }
 .price-box .minimal-price-link .label {
   color: #a0a0a0;
+  padding-left: 0;
 }
 
 /* -------------------------------------------- *
@@ -2094,7 +2113,8 @@ span.weee {
   border: 1px solid #E2D4C7;
   margin-top: 7px;
 }
-.product-pricing li,
+.product-pricing li
+,
 .tier-prices li,
 .tier-prices-grouped li {
   font-size: 12px;
@@ -4274,6 +4294,7 @@ a.skip-link {
  .footer-row{
     border-top:1px solid #bdc3c7;
     padding-top: 28px;
+    margin-top:30px;
   }
   .footer-box{}
   .footer-box h1{ text-transform: none; font-size: 16px; color: #0c77b1; margin:0 0 12px 0; font-weight: 700}
@@ -5540,8 +5561,10 @@ p.product-name a:hover {
 }
 
 .product-view {
+padding:40px 0 0 0;
   /* Set a min-height so that the floated elements break appropriately */
 }
+
 .product-view .add-to-box:after,
 .product-view .add-to-cart:after {
   content: '';
@@ -10217,7 +10240,6 @@ div.paypal-logo span > img {
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   text-transform: uppercase;
-  padding-left: 0;
 }
 
 .map-info {
