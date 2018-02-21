@@ -44,13 +44,6 @@
                     </div>
                 </div>
             </li>
-			<form action="<?php echo $this->getAddToCartUrl($_item) ?>" method="post" id="product_addtocart_form_<?php echo $_item->getId()?>"<?php if($_item->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-            <?php if(!$_item->isGrouped()): ?>
-                <input type="text" name="qty" id="qty" maxlength="12" value="<?php echo ($this->getMinimalQty($_item)?$this->getMinimalQty($_item):1) ?>" />
-                <label for="qty"><?php echo $this->__('Qty') ?>:</label>
-            <?php endif; ?>
-                <button type="button" onclick="this.form.submit(this)"><span><span><span><?php echo $this->__('Add to Cart') ?></span></span></span></button>
-            </form> 
         <?php endforeach ?>
         </ol>
         <script type="text/javascript">decorateList('block-related', 'none-recursive')</script>
