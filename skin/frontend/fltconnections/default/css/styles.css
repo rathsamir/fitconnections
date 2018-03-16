@@ -5678,6 +5678,7 @@ padding:40px 0 0 0;
 }
 
 .product-view .add-to-links {
+  display:none;
   clear: both;
   margin-top: 0px;
   margin-right: 15px;
@@ -5705,6 +5706,7 @@ padding:40px 0 0 0;
 
 .product-view .sharing-links {
   float: left;
+  display:none;
 }
 .product-view .sharing-links:after {
   content: '';

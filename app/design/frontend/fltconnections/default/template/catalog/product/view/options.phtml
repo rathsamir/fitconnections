@@ -146,11 +146,18 @@
 										var title = selectOption.innerHTML;
 										var term = title.indexOf('Term');
 										if(price < 0 && term!== -1){$$('body .product-options-bottom').each(function(element){
-										  element.hide();
+										  //$('.qty-wrapper').hide();
+										  console.log(element.down('.qty-wrapper'));
+										  element.down('.qty-wrapper').hide();
+										  element.down('.add-to-cart-buttons').update('<button type="button" title="Contract Form" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Contract Form</span></span></button>');
+										  
+										  //element.hide();
 										 });
 										}else if(term!== -1 && price == 0){
 										  $$('body .product-options-bottom').each(function(element){
-										  element.show();
+										  element.down('.qty-wrapper').show();
+										  element.down('.add-to-cart-buttons').update('<button type="button" title="Add to Cart" class="button btn-cart" onclick="productAddToCartForm.submit(this)"><span><span>Add to Cart</span></span></button>');
+										  //element.show();
 										 });
 										}
                                         curConfig = configOptions[selectOption.value];
