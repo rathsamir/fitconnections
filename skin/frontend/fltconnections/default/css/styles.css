@@ -2282,6 +2282,7 @@ span.weee {
   border-color: #3399cc;
 }
 
+
 /* -------------------------------------------- *
  * Ratings
  */
@@ -2961,10 +2962,18 @@ input[type=text] {
   width: 100%;
 }
 .contract-image{
+  border:1px solid #cccccc;
+  text-align:center
+}
+.contract-image img{
   max-width: 100%;
+  display: inline-block;
 }
 .contract-submit{
   padding: 15px;
+}
+.contract-desc{
+  
 }
 /* Only show on iPhones (not iPads or any other device) */
 @media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 0) {
