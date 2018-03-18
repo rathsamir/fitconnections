@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+	<acl>
+		<resources>
+			<admin>
+				<children>
+					<customer>
+						<children>
+							<contract translate="title" module="contract">
+								<title>Contract</title>
+								<sort_order>110</sort_order>
+							</contract>
+						</children>
+					</customer>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+	 <menu>
+        <customer>
+            <children>
+                <contract translate="title" module="contract">
+                    <title>Contract List</title>
+                    <action>adminhtml/contract_list</action>
+                    <sort_order>110</sort_order>
+                </contract>
+            </children>
+        </customer>
+    </menu>
+</config>

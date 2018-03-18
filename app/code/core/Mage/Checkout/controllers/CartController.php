@@ -223,6 +223,10 @@ class Mage_Checkout_CartController extends Mage_Core_Controller_Front_Action
 
             $product = $this->_initProduct();
             $related = $this->getRequest()->getParam('related_product');
+			if($this->getRequest()->getParam('contract-form')){
+			    $this->_redirect('contract/index', array('_query' => $params));
+				return;
+			}
 
             /**
              * Check product availability

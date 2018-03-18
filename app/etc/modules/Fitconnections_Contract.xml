@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Fitconnections_Contract>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Fitconnections_Contract>
+	</modules>
+</config>

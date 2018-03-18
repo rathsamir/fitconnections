@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+	<default>
+		<reference name="head">
+			<action method="addItem"><type>skin_css</type><name>css/contract/contract.css</name></action>
+		</reference>
+	</default>
+	<contract_index_index>
+		<reference name="root">
+			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="contract/contract" name="contract_landing" template="contract/landing.phtml" />
+		</reference>
+	</contract_index_index>
+</layout>
