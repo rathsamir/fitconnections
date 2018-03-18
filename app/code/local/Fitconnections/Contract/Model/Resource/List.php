@@ -19,7 +19,8 @@ class Fitconnections_Contract_Model_Resource_List extends Mage_Core_Model_Resour
      * @throws Mage_Core_Exception
      */
     public function removeItems(Mage_Core_Model_Abstract $object) {
-        if (!is_array($object->getData('ids')) || empty($object->getData('ids'))) {
+	    $x = $object->getData('ids');
+        if (!is_array($x) || empty($x)) {
             throw Mage::exception(
                     'Mage_Core', Mage::helper('contract')->__('Item(s) should be selected')
             );
