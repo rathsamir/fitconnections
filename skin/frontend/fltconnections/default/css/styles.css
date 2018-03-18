@@ -2270,12 +2270,12 @@ span.weee {
 .no-touch .product-img-box .product-image:not(.zoom-available):hover {
   position: relative;
   display: block;
-  border: 1px solid #ededed;
+  border: 1px solid #bdc3c7;
 }
 
 @media only screen and (max-width: 770px) {
   body .product-img-box .product-image:hover {
-    border-color: #ededed;
+    border-color: #bdc3c7;
   }
 }
 .no-touch .product-image:hover {
@@ -2953,7 +2953,19 @@ input[type=text] {
   width: 365px;
   max-width: 100%;
 }
-
+.events-heading{
+  padding: 10px 0;
+  margin: 0;
+}
+#contract-form input[type=text] {
+  width: 100%;
+}
+.contract-image{
+  max-width: 100%;
+}
+.contract-submit{
+  padding: 15px;
+}
 /* Only show on iPhones (not iPads or any other device) */
 @media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 0) {
   input[type=email],
@@ -5541,6 +5553,7 @@ p.product-name a:hover {
 
 .product-image-thumbs li {
   display: inline-block;
+  border:1px solid #bdc3c7;
 }
 .product-image-thumbs li:first-child {
   margin-left: -1px;

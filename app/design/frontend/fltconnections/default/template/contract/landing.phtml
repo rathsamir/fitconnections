@@ -1,0 +1,127 @@
+<?php
+$customerInfo = array();
+$firstname = '';
+$lastname = '';
+$email = '';
+$readonly = '';
+$uid = 0;
+if(Mage::getSingleton('customer/session')->isLoggedIn()){
+  $customer = Mage::getSingleton('customer/session')->getCustomer();
+  $uid = $customer->getId(); 
+  $email = $customer->getEmail();// for email address
+  $firstname = $customer->getFirstname();//  For first name
+  $lastname= $customer->getLastname();// For last name
+  $readonly = 'readonly';
+}
+if($this->getRequest()->getParams()){
+   $pid = (int) $this->getRequest()->getParam('product');
+   $product = Mage::getModel('catalog/product')->load($pid);
+   $title = $this->getRequest()->getParam('option-title');
+   $optionPrice = strstr($title, '$');
+   $price = preg_replace('/[^0-9.]+/', '', $optionPrice);
+   //$price = (int) $this->getRequest()->getParam('option-price');
+   //$optionPrice = $product->getPrice()+$price;
+   $pname = $product->getName();
+   $man = $product->getAttributeText('device_manufacturer');
+}
+
+
+?>
+ <div class="contract-list">
+     <h2 class="events-heading">Contract Form</h2>
+      <div class="easy-box">
+		<!--<table width="753" border="0" cellspacing="5" cellpadding="5" align="center">-->
+
+		<div class='col-md-3' style='border:2px solid #cccccc;text-align:center'>"
+			<img class="contract-image" id="product-collection-image-<?php echo $product->getId(); ?>"
+            src="<?php echo Mage::helper('catalog/image')->init($product, 'small_image')->resize(200); ?>"
+            alt="" />
+		</div>
+
+							<td valign='top'  style='background-color:#efefef' >
+								   <div class='col-md-8' style='background-color:#efefef;margin-left:5px;height:204px;'>
+									<table width='100%' border='0' valign='top' style='line-height:45px;'>
+												<tr>
+													<td ><table cellpadding='5' cellspacing='5' border='0'>
+												<tr>
+												<td width='50%'><b>Product Name:</b></td><td><?php echo $pname?></td>
+												</tr>
+												<tr>
+											<td class=''><b>Price:</b></td><td><?php echo $optionPrice?></td>
+											</tr>
+												<tr>
+												<td class=''><b>Manufacturer:</b></td><td><?php echo $man?></td>
+												</tr>
+												
+												</table></td><td valign='top'><table cellpadding='5' cellspacing='5'>
+												
+												<tr>
+												<td width='50%'><b>Type:</b></td><td><?php echo $title?></td>
+												</tr>
+												
+												</table></td></tr>
+									</table>
+								</div>
+					
+					<div class="col-md-12"><hr/></div>
+					<div></div>
+ 	</div>
+ 	</div>
+ </div>
+<div class="col-md-12">
+	<p><b>Please fill the from below</b></p>
+	<div class="row">
+		<form id='contract-form' name='contract-form' action="<?php echo Mage::getUrl('contract/index/post') ?>" method="post">
+			<input id="contract_form_key" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" type="hidden" />
+			<input type='hidden' name='pid' value='<?php echo $pid ?>' />
+			<input type='hidden' name='userid' value='<?php echo $uid?>' />
+			<input type='hidden' name='duration' value='<?php echo $title?>' />
+			<input type='hidden' name='price' value='<?php echo $price?>' />
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="fname">First Name:<span style='color:#ff0000'>*</span></label>
+					<input type='text' class="required-entry form-control" name='fname' value='<?php echo $firstname?>' <?php echo $readonly;?> style='vertical-align:middle;'/>	
+				</div>
+				<div class="form-group">
+					<label for="email">Email ID:<span style='color:#ff0000'>*</span></label>
+					<input type='text' name='email' class="validate-email required-entry form-control" value='<?php echo $email?>' <?php echo $readonly;?>/>	
+				</div>
+				<div class="form-group">
+					<label for="address">Address:</label>
+					<input class="required-entry form-control" type='text' name='address' />	
+				</div>
+				<div class="form-group">
+					<label for="zip">Zip Code:</label>
+					<input type='text' class="required-entry form-control" name='zip' />	
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="lname">Last Name:<span style='color:#ff0000'>*</span></label>
+					<input type='text'class="required-entry form-control" name='lname' value='<?php echo $lastname?>' <?php echo $readonly;?>/>
+				</div>
+				<div class="form-group">
+					<label for="phone">Phone:<span style='color:#ff0000'>*</span></label>
+					<input type='text' class="required-entry form-control" name='phone'/>
+				</div>
+				<div class="form-group">
+					<label for="town">Town:</label>
+					<input type='text' class="required-entry form-control" name='town'/>
+				</div>
+				<div class="form-group">
+					<label for="state">State:</label>
+					<input type='text' class="required-entry form-control" name='state'/>
+				</div>
+			</div>
+			<p class="text-right contract-submit">
+				<button type="submit" class="btn btn-lg btn-primary add-to-cart" name="con" Value="Submit" style="width:200px;" >Submit</button>
+			</p>
+		</form>
+	</div>
+</div>		
+
+<script type="text/javascript">
+    //<![CDATA[
+    var valentineForm = new VarienForm('contract-form', true);
+            //]]>              
+</script>
