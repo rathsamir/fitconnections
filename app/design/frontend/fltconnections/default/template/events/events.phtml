@@ -1,10 +1,10 @@
-<link rel="stylesheet" type="text/css" href="http://fltconnections.com/css/style.css" />
+<!--<link rel="stylesheet" type="text/css" href="http://fltconnections.com/css/style.css" />
 <style>
 .mw_clear {
 	clear: both;
 	width: 100%;
 }
-</style>
+</style>-->
 <script>
 	  jQuery( document ).ready(function() {
         jQuery('ul.products-grid li').each(function(i,e){
@@ -60,7 +60,7 @@
         <?php
             $path = $events['event_image'];
 			$image = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA). $path;
-            $profileUrl=Mage::getUrl("*/*/view", array('id' => $events['id']));
+            $profileUrl= Mage::getUrl("*/*/view", array('id' => $events['events_id']));
             //$mediaUrl=$this->getMediaUrl($media);
             /*if ($media) {
             $mediaUrl= Mage::helper('events')->resizeImg($media,294,NULL);
@@ -69,13 +69,13 @@
          	<div class="event-box">
 						<div class="row">
 							<div class="col-md-3">
-									  <a href="event_gallery.php?event_id=<?php echo $events['id']; ?>"> <img src="<?php echo $image ?>" width="299px" height="178px" alt="" /></a>
+									  <a href="<?php echo $profileUrl; ?>"> <img src="<?php echo $image ?>" width="299px" height="178px" alt="" /></a>
 							 </div>
 							  <div class="col-md-6">
 									<h3><?php echo $events['title'];  ?></h3>
 									<span><?php echo stripslashes($events['description']) ?></span>
 									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis non magna Quisque tempor molestie neque, quis tempus urna. Integer pharetra tempus...</p>
-									<a href="event_gallery.php?event_id=<?php echo $events['id']; ?>" class="view-gallery">View Gallery </a>
+									<a href="<?php echo $profileUrl; ?>" class="view-gallery">View Gallery </a>
 							  </div>
 						</div><!--/.row-->  
 			</div><!--/.event-box-->
