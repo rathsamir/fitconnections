@@ -2992,6 +2992,7 @@ input[type=text] {
     display: table-cell;
     vertical-align: middle;
 }
+.event-box img{ max-width: 100%;}
 /* Only show on iPhones (not iPads or any other device) */
 @media only screen and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 0) {
   input[type=email],
