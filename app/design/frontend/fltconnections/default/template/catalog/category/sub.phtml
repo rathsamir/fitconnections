@@ -1,45 +1,39 @@
-<div class="col-md-12 product-list">
+<div class="container">
+	<div class="row">
+	<div class="col-md-12">
 	<h2 class="events-heading">Rate Plans</h2>
-<?php		
-$category = Mage::registry("current_category");
-$categories = $category->getCollection()
+	<?php		
+	$category = Mage::registry("current_category");
+	$categories = $category->getCollection()
             ->addAttributeToSelect(array('name', 'image','description'))
             ->addAttributeToFilter('is_active', 1)
             ->addIdFilter($category->getChildren());?>
 			
-				<div class=row>	
+				<div class="row">	
 						<?php $x=1;
 						foreach ($categories as $category)
 							{
 								
 								?>
-								  <div class="col-md-6">
-										<div class="product-box">
-											<image src='<?php echo $category->getImageUrl() ?>' alt='' />
-					
-												<div class="product-box-heading"><?php echo $category->getName() ?></div>
-												<div class="product-box-dec" style="height:80px; !important;font-size:14px;"><?php echo $category->getDescription()?>	</div>
-												<a href='<?php echo $category->getUrl() ?>'>See All <?php echo $category->getName()?></a>
-									  </div>
+								<div class="col-md-6">
+									<div class="product-box">
+										<img src='<?php echo $category->getImageUrl() ?>' alt='' />
+				
+											<div class="product-box-heading"><?php echo $category->getName() ?></div>
+											<div class="product-box-dec" style="height:80px; !important;font-size:14px;"><?php echo $category->getDescription()?>	</div>
+											<a href='<?php echo $category->getUrl() ?>'>See All <?php echo $category->getName()?></a>
+								  	</div>
 								</div>
-							
-													
 							<?php
-								
-								
-								
 								if($x%2==0)
 								{
 									echo "</div><div class='row'>";
 								}
 								$x=$x+1;
 							}
-							
-										
-							
-				
-			echo "</td></tr>";
 			?>
-  </div>
+  							</div>
+ 				</div>
  </div>
- </div>
+</div>
+</div>
