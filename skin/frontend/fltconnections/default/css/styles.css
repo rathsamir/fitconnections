@@ -11123,24 +11123,24 @@ div.calendar table td.button {
    transition: all 0.3s ease-in-out;
 }
 .view-fifth .mask {
-   background-color: rgba(146,96,91,0.3);
-   -webkit-transform: translateX(-300px);
-   -moz-transform: translateX(-100%);
-   -o-transform: translateX(-100%);
-   -ms-transform: translateX(-100%);
-   transform: translateX(-100%);
-   -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
-   filter: alpha(opacity=100);
-   opacity: 1;
-   -webkit-transition: all 0.3s ease-in-out;
-   -moz-transition: all 0.3s ease-in-out;
-   -o-transition: all 0.3s ease-in-out;
-   -ms-transition: all 0.3s ease-in-out;
-   transition: all 0.3s ease-in-out;
-   position: absolute;
-   overflow: hidden;
-   top: 0;
-   left: 0;
+ background-color: rgba(146,96,91,0.3);
+ -webkit-transform: translateX(-300px);
+ -moz-transform: translateX(-100%);
+ -o-transform: translateX(-100%);
+ -ms-transform: translateX(-100%);
+ transform: translateX(-100%);
+ -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+ filter: alpha(opacity=100);
+ opacity: 1;
+ -webkit-transition: all 0.3s ease-in-out;
+ -moz-transition: all 0.3s ease-in-out;
+ -o-transition: all 0.3s ease-in-out;
+ -ms-transition: all 0.3s ease-in-out;
+ transition: all 0.3s ease-in-out;
+ position: absolute;
+ overflow: hidden;
+ top: 0;
+ left: 0;
 }
 .view-fifth h2 {
   text-align: center;
@@ -11188,3 +11188,60 @@ div.calendar table td.button {
   left: 50%;
   color: #2e8ab8;
  }
+ .padding0{ padding: 0px;}
+ #accordion{}
+ #accordion .panel-default{
+  border-color:#2e6da4;
+ }
+ #accordion .panel-default>.panel-heading+.panel-collapse>.panel-body {
+  border-top-color: #2e6da4;
+ }
+ #accordion .panel-heading.pro_de_panel-heading{
+  color: #ffffff;
+  background-color:#2e6da4;
+  border-color: #2e6da4;
+  text-decoration: none;
+ }
+ #accordion .panel-heading.pro_de_panel-heading .accordion-toggle{
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+ }
+ #accordion .panel-heading.pro_de_panel-heading .accordion-toggle:hover,
+ #accordion .panel-heading.pro_de_panel-heading .accordion-toggle:focus{
+  color: #ffffff;
+ }
+ .indicator{
+  margin-top: 10px;
+ }
+ .pro_de_panel-heading .accordion-toggle.collapsed .indicator{
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+ }
+ .accordion-header h4 {
+    background: #337ab7;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+.cms-page-view .std .open-content p{
+  font-size: 13px;
+  font-style: normal;
+  line-height: 22px;
+}
+.accordion-toggle span{
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.accordion-toggle span strong{
+  font-size: 24px;
+  color: #3c7896;
+  font-weight: 400;
+  background-color: #FFF;
+  border-radius: 50px;
+  padding: 0px 15px;
+  margin-right: 15px;
+}

@@ -1,12 +1,13 @@
 jQuery.noConflict();
 
-jQuery(document).ready(function() {
+	jQuery(document).ready(function() {
 	jQuery(document).on('click','.icon-search', function(){
 		jQuery('#header-search').toggleClass( "highlight" );
 		console.log("a");
 		return false;
 	})
-	jQuery('.gallery-popup').magnificPopup({
+	try {
+    	jQuery('.gallery-popup').magnificPopup({
 		  delegate: 'a',
 		  type: 'image',
 		  closeOnContentClick: false,
@@ -25,6 +26,10 @@ jQuery(document).ready(function() {
 		  }
 		  
 	  });
+	}
+	catch(err) {
+	    console.log(err);
+	}
 	/*jQuery('.manual2').magnificPopup({
       type: 'image',
       closeOnContentClick: true,
