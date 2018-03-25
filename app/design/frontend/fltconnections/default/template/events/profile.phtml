@@ -29,20 +29,25 @@ $query = 'SELECT file FROM ' . $table . ' WHERE events_id = '
 					 	<a href="<?php echo Mage::getUrl('events/index/index');?>" class="blue_text">Event</a>
 					 	<span class="gallerylink2"> &gt;&gt; <strong><?php echo $eventTitle ?></strong></span>
 					</div>
+					<div class="gallery-popup">
 					<?php foreach($results as $result):?>	
 					<?php 
 					 $basePath = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . '/profileimages/events' . $result;
 					 //$image = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA). $path;
 					?>
+
 					<div class="col-md-3">
 						<div class=" view view-fifth HoverBorder">
 							<img src="<?php echo $basePath ?>">
 							<div class="mask">
-				            	<a href="<?php echo $basePath ?>" class="manual2" rel="example_group"><i class="fa fa-search fa-3x"></i></a>    
+				            	<a href="<?php echo $basePath ?>" class="manual2" rel="example_group"><i class="fa fa-search fa-3x"></i>
+				            	<img src="<?php echo $basePath ?>" class="hide">
+				            	</a>    
 			            	</div>
 			        	</div>
 					</div>
 			    	<?php endforeach;?>
+			    	</div>
 				<div>
 			</div>
 		</div>

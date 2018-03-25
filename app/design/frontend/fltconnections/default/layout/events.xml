@@ -13,8 +13,8 @@
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference> 
          <reference name="head">
-            <action method="addItem"><type>skin_css</type><name>css/easylightbox.css</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/lightbox.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/magnific.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/magnific.js</name></action>
         </reference>
         <reference name="content">
             <block type="events/profile" name="profile" template="events/profile.phtml" />      

@@ -6,4 +6,33 @@ jQuery(document).ready(function() {
 		console.log("a");
 		return false;
 	})
+	jQuery('.gallery-popup').magnificPopup({
+		  delegate: 'a',
+		  type: 'image',
+		  closeOnContentClick: false,
+		  fixedContentPos: false,
+		  closeBtnInside: false,
+		  mainClass: 'mfp-with-zoom mfp-img-mobile',
+		  gallery: {
+			  enabled: true
+		  },
+		  zoom: {
+			  enabled: true,
+			  duration: 300, // don't foget to change the duration also in CSS
+			  opener: function(element) {
+				  return element.find('img');
+			  }
+		  }
+		  
+	  });
+	/*jQuery('.manual2').magnificPopup({
+      type: 'image',
+      closeOnContentClick: true,
+      mainClass: 'mfp-img-mobile',
+      image: {
+        verticalFit: true
+      }
+      
+    });*/	
+
 });
