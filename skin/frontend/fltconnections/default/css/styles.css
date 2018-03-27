@@ -11113,12 +11113,19 @@ div.calendar table td.button {
   vertical-align: middle;
   margin-top: 0;
 }
-.category-plans-for-tablets .category-title{
+.rate-plans .category-title{
   display: none;
 }
 .category-plans-for-tablets #comparelist{
   text-align: right;
   padding-bottom: 15px;
+}
+.category-rate-plans .product-box-dec .container{
+  width: auto;
+}
+.rate-plans .rate-plan-title{
+  margin: 0;
+  padding: 15px 0;
 }
 /**/
  /*********EVENTS PAGE CSS*****************/
