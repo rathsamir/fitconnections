@@ -32,6 +32,8 @@
  */
 /* @var $this Mage_Catalog_Block_Product_List */
 ?>
+<div class="container">
+<div class="row">
 <?php
     $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
@@ -39,11 +41,11 @@
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
+<div class="col-md-12">
 <form id="comparelist">
-    <button type="button" title="<?php echo $this->__('Compare') ?>" class="button"><span><span><?php echo $this->__('Compare') ?></span></span></button>
+    <button type="button" title="<?php echo $this->__('Compare') ?>" class="btn btn-primary btn-lg"><span><span><?php echo $this->__('Compare') ?></span></span></button>
 </form>
-<div class="container">
-<div class="row">
+</div>
 <div class="category-products rateplans">
     <?php //echo $this->getToolbarHtml() ?>
     <?php // Grid Mode ?>
@@ -51,12 +53,12 @@
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <!-- <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col"> -->
-    <ul class="list-product">
+    <ul class="">
         <?php $i=0; foreach ($_productCollection as $_product): ?>
             <?php /*if ($i++%$_columnCount==0): ?>
             <?php endif*/ ?>
-            <li class="col-sm-6 col-md-6 item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
-                <div class="product-info col-sm-7 col-md-7">
+            <li class="col-sm-4 col-md-4 item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
+                <div class="product-info">
                     <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2> 
 					<span class="monthly"><?php echo $_product->getRpMonthly();?></span>
                     <?php
@@ -73,7 +75,7 @@
                     ?>
                   
                     <div class="actions">
-                        <ul class="add-to-links">
+                        <ul class="add-to-links btn btn-primary">
                             <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
 							<input class="idcompare" type="checkbox" name="idcompare<?php echo $_product->getId();?>" value="<?php echo $_product->getId();?>"><?php echo $this->__('Compare') ?>
                                 <!--<li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>-->

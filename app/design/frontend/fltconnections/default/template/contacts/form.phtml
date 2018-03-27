@@ -24,48 +24,122 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
-<div class="page-title">
-    <h1><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="messages_product_view">
+                <?php echo $this->getMessagesBlock()->toHtml() ?>
+            </div>
+            <div class="page-title">
+                <h1><?php echo Mage::helper('contacts')->__('Contact Us') ?></h1>
+            </div>
+        </div>  
+    <div class="col-md-6">
+        <h2>Get in touch</h2>
+        <div class="contact-detail">
+            <div class="contact-icon">
+                <span class="icon-set">
+                <img src="<?php echo $this->getSkinUrl('images/map-pin.png') ?>" />
+                </span>
+            </div>
+            <p>FLT CONNECTIONS<br />5377 75 STREET NW, EDMONTON, AB, T6E 0W4</p>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-icon"><span class="icon-set">
+            <img src="<?php echo $this->getSkinUrl('images/i-phone.png') ?>" />
+            </span></div>
+            <p>Call: 7804656055 / Fax: 7804067091</p>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-icon">
+                <a class="icon-set" href="mailto:info@fltconnections.com">
+                <img src="<?php echo $this->getSkinUrl('images/email.png') ?>" />
+                </a>
+            </div>
+            <p>info@fltconnections.com</p>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-icon">
+                <a class="icon-set" href="https://twitter.com/fltcnow">
+                <img src="<?php echo $this->getSkinUrl('images/contact-tw.png') ?>" />
+                </a>
+            </div>
+            <p><a href="https://twitter.com/fltcnow">@fltcnow</a></p>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-icon">
+            <a class="icon-set" href="https://twitter.com/FLT_Connections">
+                <img src="<?php echo $this->getSkinUrl('images/contact-tw.png') ?>" />
+            </a>
+            </div>
+            <p><a href="https://twitter.com/FLT_Connections">@FLT_Connections</a></p>
+        </div>  
+        <div class="contact-detail">
+            <div class="contact-icon">
+                <a class="icon-set" href="https://www.facebook.com/feelliketalkingconnections">
+                    <img src="<?php echo $this->getSkinUrl('images/contact-fb.png') ?>" />
+                </a>
+            </div>
+            <p><a href="https://www.facebook.com/feelliketalkingconnections">www.facebook.com/feelliketalkingconnections</a></p>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-icon"><a class="icon-set" href="https://www.instagram.com/fltconnectionsbell/">
+                <img src="<?php echo $this->getSkinUrl('images/icon-instagram.png') ?>" />
+            </a>
+            </div>
+            <p><a href="https://www.instagram.com/fltconnectionsbell/">www.instagram.com/fltconnections</a></p>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-icon"><a class="icon-set" href="https://www.linkedin.com/company/fltconnectionsbell">
+                <img src="<?php echo $this->getSkinUrl('images/icon-linkedin.png') ?>" />
+            </a>
+            </div>
+            <p><a href="https://www.linkedin.com/company/fltconnectionsbell">www.linkedin.com/company/fltconnectionsbell</a></p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h2>Send us a message</h2>
+        <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post" class="scaffold-form">
+            <div class="fieldset">
+                <h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h2>
+                <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+                <ul class="form-list">
+                    <li class="fields">
+                        <div class="field">
+                            <label for="name" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Name') ?></label>
+                            <div class="input-box">
+                                <input name="name" id="name" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Name')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="form-control required-entry" type="text" />
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="email" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Email') ?></label>
+                            <div class="input-box">
+                                <input name="email" id="email" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Email')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="form-control required-entry validate-email" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <label for="telephone"><?php echo Mage::helper('contacts')->__('Telephone') ?></label>
+                        <div class="input-box">
+                            <input name="telephone" id="telephone" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Telephone')) ?>" value="" class="form-control" type="tel" />
+                        </div>
+                    </li>
+                    <li class="wide">
+                        <label for="comment" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Comment') ?></label>
+                        <div class="input-box">
+                            <textarea name="comment" id="comment" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Comment')) ?>" class="required-entry form-control" cols="5" rows="3"></textarea>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="buttons-set">
+                <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
+                <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Submit')) ?>" class="btn btn-primary"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
+            </div>
+        </form>
+    </div>
 </div>
-<form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post" class="scaffold-form">
-    <div class="fieldset">
-        <h2 class="legend"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h2>
-        <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
-        <ul class="form-list">
-            <li class="fields">
-                <div class="field">
-                    <label for="name" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Name') ?></label>
-                    <div class="input-box">
-                        <input name="name" id="name" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Name')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserName()) ?>" class="form-control required-entry" type="text" />
-                    </div>
-                </div>
-                <div class="field">
-                    <label for="email" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Email') ?></label>
-                    <div class="input-box">
-                        <input name="email" id="email" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Email')) ?>" value="<?php echo $this->escapeHtml($this->helper('contacts')->getUserEmail()) ?>" class="form-control required-entry validate-email" type="email" autocapitalize="off" autocorrect="off" spellcheck="false" />
-                    </div>
-                </div>
-            </li>
-            <li>
-                <label for="telephone"><?php echo Mage::helper('contacts')->__('Telephone') ?></label>
-                <div class="input-box">
-                    <input name="telephone" id="telephone" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Telephone')) ?>" value="" class="form-control" type="tel" />
-                </div>
-            </li>
-            <li class="wide">
-                <label for="comment" class="required"><em>*</em><?php echo Mage::helper('contacts')->__('Comment') ?></label>
-                <div class="input-box">
-                    <textarea name="comment" id="comment" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Comment')) ?>" class="required-entry form-control" cols="5" rows="3"></textarea>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="buttons-set">
-        <input type="text" name="hideit" id="hideit" value="" style="display:none !important;" />
-        <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape(Mage::helper('contacts')->__('Submit')) ?>" class="btn btn-primary"><span><span><?php echo Mage::helper('contacts')->__('Submit') ?></span></span></button>
-    </div>
-</form>
+</div>
 <script type="text/javascript">
 //<![CDATA[
     var contactForm = new VarienForm('contactForm', true);

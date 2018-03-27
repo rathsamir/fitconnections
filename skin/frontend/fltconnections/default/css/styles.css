@@ -2502,18 +2502,20 @@ span.weee {
 
 .pages a,
 .pages .current {
-  display: inline-block;
-  border: 0;
-  font-size: 13px;
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-  white-space: nowrap;
-  line-height: 30px;
-  width: 25px;
-  height: 30px;
-  padding: 0;
-  color: #3399cc;
+  display: inline-block !important;
+    border: 0;
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    padding: 0 !important;
+    color: #3399cc;
+    margin: 0 2px;
+    border-radius: 50% !important;
   
 }
 
@@ -10283,7 +10285,7 @@ div.paypal-logo span > img {
 }
 
 #contactForm {
-  padding-left: 40px;
+  
 }
 #contactForm h2 {
   display: none;
@@ -11099,6 +11101,24 @@ div.calendar table td.button {
 .product-box-dec {
     padding: 10px 0 15px 0;
     font-size: 14px;
+}
+.rateplans .product-info {
+    border: 1px solid #ccc9c9;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px 0;
+}
+.rateplans .product-info .idcompare{
+  margin-right: 2px;
+  vertical-align: middle;
+  margin-top: 0;
+}
+.category-plans-for-tablets .category-title{
+  display: none;
+}
+.category-plans-for-tablets #comparelist{
+  text-align: right;
+  padding-bottom: 15px;
 }
 /**/
  /*********EVENTS PAGE CSS*****************/
