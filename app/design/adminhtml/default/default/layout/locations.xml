@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="1.4.0">
+    <adminhtml_locations_index>
+        <reference name="content">
+            <block type="locations/adminhtml_locations" name="locations" />
+        </reference>
+    </adminhtml_locations_index>
+</layout>

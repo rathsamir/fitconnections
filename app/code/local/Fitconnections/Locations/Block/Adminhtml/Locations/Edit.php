@@ -1,0 +1,45 @@
+<?php
+
+class Fitconnections_Locations_Block_Adminhtml_Locations_Edit extends Mage_Adminhtml_Block_Widget_Form_Container
+{
+    public function __construct()
+    {
+        parent::__construct();
+                 
+        $this->_objectId = 'id';
+        $this->_blockGroup = 'locations';
+        $this->_controller = 'adminhtml_locations';
+        
+        $this->_updateButton('save', 'label', Mage::helper('locations')->__('Save Location'));
+        $this->_updateButton('delete', 'label', Mage::helper('locations')->__('Delete Location'));
+		
+        $this->_addButton('saveandcontinue', array(
+            'label'     => Mage::helper('adminhtml')->__('Save And Continue Edit'),
+            'onclick'   => 'saveAndContinueEdit()',
+            'class'     => 'save',
+        ), -100);
+
+        $this->_formScripts[] = "
+            function toggleEditor() {
+                if (tinyMCE.getInstanceById('locations_content') == null) {
+                    tinyMCE.execCommand('mceAddControl', false, 'locations_content');
+                } else {
+                    tinyMCE.execCommand('mceRemoveControl', false, 'locations_content');
+                }
+            }
+
+            function saveAndContinueEdit(){
+                editForm.submit($('edit_form').action+'back/edit/');
+            }
+        ";
+    }
+
+    public function getHeaderText()
+    {
+        if( Mage::registry('locations_data') && Mage::registry('locations_data')->getId() ) {
+            return Mage::helper('locations')->__("Edit Location '%s'", $this->htmlEscape(Mage::registry('locations_data')->getTitle()));
+        } else {
+            return Mage::helper('locations')->__('Add Location');
+        }
+    }
+}

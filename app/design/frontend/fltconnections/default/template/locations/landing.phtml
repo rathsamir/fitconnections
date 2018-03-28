@@ -1,0 +1,202 @@
+<?php 
+ $id=$_SERVER[REQUEST_URI];
+ $id=explode("?",$id);
+ $lid=explode("=",base64_decode($id[1]));
+ //print_r($lid);
+ $lid1=explode("&",$lid[1]);
+ $lid2=explode("&",$lid[2]);
+ $lid3=explode("&",$lid[3]);
+ $locations = Mage::getUrl('locations');
+if($lid3[0]!="")
+	$dl=$lid3[0];
+else
+	$dl=$_GET['DL'];
+	
+$resource = Mage::getSingleton('core/resource');
+$readConnection = $resource->getConnection('core_read');
+if($dl!="")
+{
+	//$qry=mysql_query("select * from locations where State='$dl' order by State");
+	$qry1="select * from locations where state='$dl' order by state";
+	$results = $readConnection->fetchAll($qry1);
+	
+}
+else
+{
+
+$query = 'select * from locations order by state ';
+$results = $readConnection->fetchAll($query);
+	//$qry=mysql_query("select * from locations order by State");
+//$qry1=mysql_query("select * from locations order by State");
+	
+}
+$numCheck=count($results);
+$stateCnt = 1;
+if($numCheck > 0 )
+{
+			foreach($results as $row1)
+			{
+				//$Country[]=$row[Country];
+				$state[]=$row1['state'];
+				$Town[$row1['state']][]=$row1['town'];
+				/*$Title[$row1[State]][]=ucfirst($row1[Title]);
+				$Address[$row1[State]][]=$row1[Address];
+				$PostCode[$row1[State]][]=$row1[PostCode];
+				$Phone[$row1[State]][]=$row1[Phone];
+				$Fax[$row1[State]][]=$row1[Fax];
+				$id[$row1[State]][]=$row1[id];*/
+
+				$Title[$row1['town']][]=ucfirst($row1['title']);
+				$Address[$row1['town']][]=$row1['address'];
+				$PostCode[$row1['town']][]=$row1['postcode'];
+				$Phone[$row1['town']][]=$row1['phone'];
+				$Fax[$row1['town']][]=$row1['fax'];
+				$id[$row1['town']][]=$row1['id'];
+
+
+
+			}
+			$UState=array_unique($state);
+}
+?>
+<div class="container">
+    <div class="row">
+  <div class="col-md-9  product-list">
+	<h2 class="events-heading">Locations</h2>
+		
+     	<div class="location-box">
+        	<div class="row">
+                <div class="col-md-5 store-list">
+                    <div class="store-icon">Store's List </div>
+                    
+                    <ul>
+					<?php
+						
+					  foreach($UState as $k1=>$v1)
+					 {	
+						$LocCount=sizeof($Town[$v1]);
+					?>			
+                    	<li><?php echo $v1;?> <span><?php echo $LocCount;?></span></li>
+                       
+                   <?php
+					   }
+					?>     
+                    </ul>
+                </div>
+                
+                
+                 <div class="col-md-6">
+                	<img src="<?php echo $this->getSkinUrl('images/map.jpg');?>" alt="Canada Map" border="0" usemap="#Map" />
+        					    <map name="Map" id="Map">
+                                  <area shape="poly" title="British Columbia" coords="91,326,71,323,50,315,41,311,39,306,34,297,29,289,24,283,25,278,26,270,27,262,23,253,23,247,29,237,31,233,27,226,28,219,28,208,27,199,27,192,38,198,54,206,66,210,76,215,88,220,93,222,86,236,80,250,75,257,71,268,69,277,74,297,91,325,98,330" href="<?php echo $locations?>?DL=British Columbia" />
+                                  <area shape="poly" coords="140,230,95,222,74,267,76,293,98,329,122,335,139,230" title="Alberta" href="locations.php?DL=Alberta" />
+                                  <area shape="poly" coords="177,339,177,236,142,234,124,334,175,339" title="Saskatchewan" href="locations.php?DL=Saskatchewan" />
+                                  <area shape="poly" title="Manitoba" coords="211,235,212,245,220,246,222,255,233,258,243,262,215,301,216,339,179,340,179,237,211,234" href="locations.php?DL=Manitoba" />
+                                  <area shape="poly" title="Ontario" coords="247,263,267,273,283,269,287,287,306,302,325,343,356,344,345,361,330,373,311,392,314,364,324,362,312,352,288,350,281,341,256,338,252,345,238,344,219,340,219,300" href="locations.php?DL=Ontario" />
+                                  <area shape="poly" coords="429,313,443,315,458,322,458,332,453,346,432,347,418,343,411,333,429,312" title="Nova Scotia" href="locations.php?DL=New Scotia" />
+                                  <area shape="poly" title="New Brunswick" coords="399,292,407,292,411,297,418,302,423,306,425,312,417,320,403,324,385,323,375,319,372,307,379,298,399,292" href="locations.php?DL=New Brunswick" />
+                                  <area shape="poly" title="Newfoundland"coords="429,233,432,230,435,239,439,242,448,241,455,239,481,243,490,246,489,262,475,272,456,278,432,277,422,270,421,261,418,250" href="locations.php?DL=Newfoundland" />
+                                  <area shape="poly" coords="310,296,308,289,299,272,309,247,293,233,287,214,280,201,293,194,306,194,319,197,332,209,340,213,345,196,367,230,352,238,368,266,391,264,423,232,417,255,381,277,374,294,370,314,362,334,356,344,326,342,307,300" title="Quebec" href="locations.php?DL=Quebec" />
+                                  <area shape="poly" title="Labrador" coords="345,193,361,199,371,204,381,215,401,213,416,217,428,226,390,258,372,267,355,240,371,233,346,194" href="locations.php?DL=Labrador" />
+                                  <area shape="poly" coords="11,182,9,176,61,108,73,124,65,137,67,154,65,172,64,189,68,205,76,212,12,182" href="locations.php?DL=Yukon Territory"  title="Yukon Territory" />
+                                  <area shape="poly" coords="71,120,82,124,96,124,101,128,103,134,111,135,116,137,114,148,138,183,149,191,176,199,173,235,141,233,95,221,75,212,66,194"  title="Northwest Territory" href="locations.php?DL=Northwest Territory" />
+                                  <area shape="poly"  title="Nunavut" coords="119,150,120,136,136,158,151,165,160,164,174,164,196,165,208,161,211,153,220,154,226,154,228,166,234,175,235,187,220,205,214,219,209,232,179,235,180,200,140,180,125,159" href="locations.php?DL=Nunavut" />
+                           </map>
+                 </div>
+             <div class="col-md-12" >&nbsp;</div>     
+             <div class="col-md-12" style="text-align:right;"><a href="<?php echo $locations ?>" style='padding:3px;color:#ffffff;font-size:11px;background-color:#0066a4;text-decoration:none;font-weight:bold'>All Stores </a></div>
+				<div class="col-md-12" >&nbsp;</div>        	
+        	</div><!--/.row-->
+            <div class="panel-group" id="accordion">
+            <?php
+				
+				if($numCheck > 0 )
+				{
+				
+					$UState=array_unique($state);
+					foreach($UState as $k1=>$v1)
+					{	
+						$LocCount=sizeof($Town[$v1]);
+								$x=1;
+								//echo $LocCount;
+								$UTown=array_unique($Town[$v1]);
+								$UTown=array_values($UTown);
+								$StCount=sizeof($UTown);
+			?>					
+				<div class="panel panel-default">
+					<div class="panel-heading pro_de_panel-heading">
+					  <div class="panel-title">
+						  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $stateCnt;?>">
+							<h4><span><?php echo $LocCount;?></span><?php echo $v1;?> <i class="indicator glyphicon glyphicon-chevron-up glyphicon_new pull-right"></i> </h4>
+						</a> 
+					  </div>
+					</div>
+					<div id="collapse<?php echo$stateCnt;?>" class="panel-collapse collapse in" area-expanded='true' style="">
+						<div class="panel-body padding0">
+ 						<!--Start Sub Accordion 222-->	
+							<div class="accordion-container">
+							<!--Accordion Header-->	
+							 <?php
+												
+								for($i=0;$i<=$StCount-1;$i++)
+								{
+									if($UTown[$i]!="")
+									{
+							?>     
+							<div class="accordion-header active-header">
+									<h4><?php echo strtoupper($UTown[$i]);?></h4>
+							 </div>
+							 <div class="accordion-content open-content " style="width: 810px; display: block;"><!--open-content active-header style="width: 810px; display: block;" -->
+								 <div class="row">
+							<?php
+										$x=1;
+										for($j=0;$j<=$LocCount-1;$j++)
+										{
+											if($UTown[$i]!="" && $Title[$UTown[$i]][$j]!="")
+											{
+									?>
+											<div class="col-md-4">
+													<p><?php echo $Title[$UTown[$i]][$j];?><br />
+														<?php echo $Address[$UTown[$i]][$j];?><br />
+														<?php echo $UTown[$i]."-".$PostCode[$UTown[$i]][$j];?><br />
+														<strong>Phone: <?php echo $Phone[$UTown[$i]][$j];?></strong><br />
+														<strong>Fax: <?php echo $Fax[$UTown[$i]][$j];?></strong></p>
+														<a href="map.php?id=<?php echo $id[$UTown[$i]][$j];?>" target="_blank">Click for map</a>
+												</div>	
+								  <?php   	//if($x%3==0)
+												//	echo "<div class='row'>";// <!--row-->
+												$x=$x+1;
+											}
+										}	
+									?>	
+								</div>
+							</div> 
+						<?php
+								}
+							}
+							$LocCount="";
+						?>	
+						</div>
+          <!--End Sub Accordion-->	
+            
+          </div>
+        </div>
+      </div>
+      <?php $stateCnt++;	}
+						
+					}
+					else
+					{
+	   ?>
+						<div class="col-md-12" class="Error">** No Stores Found</div>
+	   <?php
+				}
+	   ?>  
+	   <!--End Alberta--> 
+ </div>
+        </div>   
+ </div>
+
+</div>
+</div>
+</div>
