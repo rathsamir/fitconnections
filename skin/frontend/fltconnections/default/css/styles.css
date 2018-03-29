@@ -632,26 +632,26 @@ h6, .h6 {
 #myCarousel .carousel-inner>.item,
 #myCarousel2 .carousel-inner>.item{ text-align: center;}
 
-#myCarousel .carousel-inner>.item>img{ height: 400px; display: inline-block;}
+#myCarousel .carousel-inner>.item>img{ display: inline-block;}
 #myCarousel2 .carousel-inner>.item>img{ height: 500px; display: inline-block;}
 
 #myCarousel .carousel-indicators,
-#myCarousel2 .carousel-indicators{ text-align: left;}
+#myCarousel2 .carousel-indicators{ text-align: center; margin-bottom: 0;}
 #myCarousel .carousel-indicators li,
 #myCarousel2 .carousel-indicators li{
-  width: 36px;
+  width: 15px;
   border: 0 none;
-  background-color: #cccccc;
-  height: 2px;
-  border-radius: 0;
+  background-color: transparent;
+  height: 15px;
+  border-radius: 50%;
   margin: 0 0 0 5px;
   vertical-align: text-bottom;
+  border: 2px solid #000;
 
 }
 #myCarousel .carousel-indicators li.active,
 #myCarousel2 .carousel-indicators li.active{
-  height: 2px;
-  background-color: #3aa6d9;
+  border: 2px solid #3aa6d9;
 }
 .mobility-block{ background: url("../images/phone_blog.jpg") no-repeat 0 0;}
 .internet-block{ background: url("../images/internet_blog.jpg") no-repeat 0 0;}
