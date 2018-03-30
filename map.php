@@ -1,20 +1,35 @@
 <?php
-require 'app/bootstrap.php';
-require 'app/Mage.php';
+ini_set('display_errors', 1);
+ini_set('max_execution_time', 600);
+require_once('app/Mage.php');
+$count = 0;
+umask(0);
+Mage::app()->setCurrentStore(Mage_Core_Model_App::ADMIN_STORE_ID);
 				echo "<table>";
 							echo "<tr><td>";
 							
                                              //echo 'id'.$_GET['id'];
 								
-									
+$resource = Mage::getSingleton('core/resource');
+$readConnection = $resource->getConnection('core_read');
+$id = $_GET['id'];
+	$qry1 = "select * from locations where id='$id'";
+	$results = $readConnection->fetchAll($qry1);
+	$row = $results[0];echo $row['address'];
+	$add = $row['address'];
+	$town = $row['town'];
+	$state = $row['state'];
+	$postcode = $row['postcode'];
+	$address="$add $town $state $postcode";
+	$AdD3 = $address;
 										
 											//Local//
 												$key="AIzaSyCd2jzNEGVt1Y4pU7i4d793cj9PafXcLW8";				
 											//Live//
-											$key="ABQIAAAAljeZ0jFCUNG_-xKzK7t0kBRvkLyYf0d4ImdRMLvip-XeY-2IiBT9kuj-J0t3IICgag0rwqMh7WJOvg";
+											//$key="ABQIAAAAljeZ0jFCUNG_-xKzK7t0kBRvkLyYf0d4ImdRMLvip-XeY-2IiBT9kuj-J0t3IICgag0rwqMh7WJOvg";
 											//echo "<tr><td align='center'><iframe src='http://maps.google.com/?q=$row[postcode]' height='470' scrolling='auto' frameborder='0'></iframe></td></tr>";
-											$address = $_GET['id'];
-											$AdD3=$_GET['id'];
+											//$address = $_GET['id'];
+											//$AdD3=$_GET['id'];
 											echo $address;
 											Show_map($address,$key,$AdD3);
 									
