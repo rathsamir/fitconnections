@@ -61,7 +61,7 @@ if($numCheck > 0 )
 ?>
 <div class="container">
     <div class="row">
-  <div class="col-md-9  product-list">
+  <div class="col-md-12  product-list">
 	<h2 class="events-heading">Locations</h2>
 		
      	<div class="location-box">
@@ -88,7 +88,7 @@ if($numCheck > 0 )
                 
                 
                  <div class="col-md-6">
-                	<img src="<?php echo $this->getSkinUrl('images/map.jpg');?>" alt="Canada Map" border="0" usemap="#Map" />
+                	<img src="<?php echo Mage::getDesign()->getSkinUrl().'images/map.jpg';?>" alt="Canada Map" border="0" usemap="#Map" />
         					    <map name="Map" id="Map">
                                   <area shape="poly" title="British Columbia" coords="91,326,71,323,50,315,41,311,39,306,34,297,29,289,24,283,25,278,26,270,27,262,23,253,23,247,29,237,31,233,27,226,28,219,28,208,27,199,27,192,38,198,54,206,66,210,76,215,88,220,93,222,86,236,80,250,75,257,71,268,69,277,74,297,91,325,98,330" href="<?php echo $locations?>?DL=British Columbia" />
                                   <area shape="poly" coords="140,230,95,222,74,267,76,293,98,329,122,335,139,230" title="Alberta" href="<?php echo $locations?>?DL=Alberta" />
