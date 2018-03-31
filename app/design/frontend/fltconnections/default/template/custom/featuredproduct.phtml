@@ -1,0 +1,21 @@
+<?php
+$featuredProducts = Mage::getModel('catalog/product')->getCollection()
+    ->addAttributeToSelect('*')
+    ->addAttributeToFilter('status',1)
+    ->addAttributeToFilter('visibility',4)
+    ->addAttributeToFilter('featured', 1);
+?>
+<section class="greyBg">
+    <div class="main-container col1-layout">
+        <h2 class="align-center page-title">Feature Products</h2>
+        <ul class="products-grid products-grid--max-4-col ">
+            <?php foreach($featuredProducts as $featuredProduct) : ?>
+                <li class="item">
+                    <a href="<?php echo $featuredProduct->getProductUrl();?>" class="displayBlock">
+                        <img src="<?php echo Mage::helper('catalog/image')->init($featuredProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $featuredProduct->getName(); ?>"/>
+                    </a>
+                    <p><?php echo $featuredProduct->getName(); ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
