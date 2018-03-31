@@ -636,7 +636,10 @@ h6, .h6 {
 #myCarousel2 .carousel-inner>.item>img{ height: 500px; display: inline-block;}
 
 #myCarousel .carousel-indicators,
-#myCarousel2 .carousel-indicators{ text-align: center; margin-bottom: 0;}
+#myCarousel2 .carousel-indicators{
+  text-align: center;
+  margin-bottom: 0;
+}
 #myCarousel .carousel-indicators li,
 #myCarousel2 .carousel-indicators li{
   width: 15px;
@@ -647,7 +650,6 @@ h6, .h6 {
   margin: 0 0 0 5px;
   vertical-align: text-bottom;
   border: 2px solid #000;
-
 }
 #myCarousel .carousel-indicators li.active,
 #myCarousel2 .carousel-indicators li.active{
@@ -11234,6 +11236,13 @@ div.calendar table td.button {
   color: #ffffff;
   text-decoration: none;
  }
+ #accordion .panel-heading.pro_de_panel-heading .accordion-toggle h4{
+  color: #ffffff;
+  margin-bottom: 0;
+ }
+ .map-btn{
+    margin-bottom: 15px;
+ }
  #accordion .panel-heading.pro_de_panel-heading .accordion-toggle:hover,
  #accordion .panel-heading.pro_de_panel-heading .accordion-toggle:focus{
   color: #ffffff;
@@ -11263,7 +11272,7 @@ div.calendar table td.button {
   font-weight: 800;
   text-transform: uppercase;
 }
-.accordion-toggle span strong{
+.accordion-toggle h4 span{
   font-size: 24px;
   color: #3c7896;
   font-weight: 400;

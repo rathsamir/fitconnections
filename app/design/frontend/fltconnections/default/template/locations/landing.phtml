@@ -77,8 +77,8 @@ if($numCheck > 0 )
 						$LocCount=sizeof($Town[$v1]);
 					?>			
                     	<li>
-                    		<span><?php echo $LocCount;?></span>
-                    		<label><?php echo $v1;?></label>
+                    		<label><?php echo $LocCount;?></label>
+                    		<span><?php echo $v1;?></span>
                     	</li>
                    <?php
 					   }
@@ -106,7 +106,8 @@ if($numCheck > 0 )
                            </map>
                  </div>
              <div class="col-md-12" >&nbsp;</div>     
-             <div class="col-md-12" style="text-align:right;"><a href="<?php echo $locations ?>" style='padding:3px;color:#ffffff;font-size:11px;background-color:#0066a4;text-decoration:none;font-weight:bold'>All Stores </a></div>
+             <div class="col-md-12" style="text-align:right;">
+             <a href="<?php echo $locations ?>" class="btn btn-primary">All Stores </a></div>
 				<div class="col-md-12" >&nbsp;</div>        	
         	</div><!--/.row-->
             <div class="panel-group" id="accordion">
@@ -114,7 +115,6 @@ if($numCheck > 0 )
 				
 				if($numCheck > 0 )
 				{
-				
 					$UState=array_unique($state);
 					foreach($UState as $k1=>$v1)
 					{	
@@ -148,23 +148,25 @@ if($numCheck > 0 )
 							<div class="accordion-header active-header">
 									<h4><?php echo strtoupper($UTown[$i]);?></h4>
 							 </div>
-							 <div class="accordion-content open-content " style="width: 810px; display: block;"><!--open-content active-header style="width: 810px; display: block;" -->
-								 <div class="row">
-							<?php
+							 <div class="accordion-content open-content"><!--open-content active-header style="width: 810px; display: block;" -->
+							<div class="container-fluid">
+								<div class="row">
+									<?php
 										$x=1;
 										for($j=0;$j<=$LocCount-1;$j++)
 										{
 											if($UTown[$i]!="" && $Title[$UTown[$i]][$j]!="")
 											{
 									?>
-											<div class="col-md-4">
-													<p><?php echo $Title[$UTown[$i]][$j];?><br />
-														<?php echo $Address[$UTown[$i]][$j];?><br />
-														<?php echo $UTown[$i]."-".$PostCode[$UTown[$i]][$j];?><br />
-														<strong>Phone: <?php echo $Phone[$UTown[$i]][$j];?></strong><br />
-														<strong>Fax: <?php echo $Fax[$UTown[$i]][$j];?></strong></p>
-														<a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>map.php?id=<?php echo $id[$UTown[$i]][$j];?>" target="_blank">Click for map</a>
-												</div>	
+									<div class="col-md-3">
+											<p>
+											<?php echo $Title[$UTown[$i]][$j];?><br />
+											<?php echo $Address[$UTown[$i]][$j];?><br />
+												<?php echo $UTown[$i]."-".$PostCode[$UTown[$i]][$j];?><br />
+												<strong>Phone: <?php echo $Phone[$UTown[$i]][$j];?></strong><br />
+												<strong>Fax: <?php echo $Fax[$UTown[$i]][$j];?></strong></p>
+									<a href="<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>map.php?id=<?php echo $id[$UTown[$i]][$j];?>" target="_blank" class="btn btn-primary map-btn"><i class="fa fa-map-marker"></i> Click for map</a>
+									</div>	
 								  <?php   	//if($x%3==0)
 												//	echo "<div class='row'>";// <!--row-->
 												$x=$x+1;
@@ -172,6 +174,7 @@ if($numCheck > 0 )
 										}	
 									?>	
 								</div>
+								</div>	
 							</div> 
 						<?php
 								}

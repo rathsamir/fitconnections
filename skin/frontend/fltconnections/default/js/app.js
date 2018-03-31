@@ -1190,7 +1190,7 @@ var ProductMediaManager = {
                 image.parents('.product-image').addClass('zoom-available');
             }
         }
-        if ($('.review-product-list').length == 0) {
+        if ($j('.review-product-list').length == 0) {
             image.elevateZoom();
         }
     },
