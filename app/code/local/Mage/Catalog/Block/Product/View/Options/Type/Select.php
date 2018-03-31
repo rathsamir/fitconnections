@@ -53,7 +53,7 @@ class Mage_Catalog_Block_Product_View_Options_Type_Select
             $select = $this->getLayout()->createBlock('core/html_select')
                 ->setData(array(
                     'id' => 'select_'.$_option->getId(),
-                    'class' => $require.' product-custom-option'
+                    'class' => $require.' product-custom-option form-control'
                 ));
             if ($_option->getType() == Mage_Catalog_Model_Product_Option::OPTION_TYPE_DROP_DOWN) {
                 $select->setName('options['.$_option->getid().']')
