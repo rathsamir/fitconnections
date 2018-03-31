@@ -1365,7 +1365,7 @@ a.button:hover {
 /* -------------------------------------------- *
  * Pullout Column
  */
- #myCarousel{ margin-bottom: 50px}
+ #myCarousel{ margin-bottom: 15px}
  .pull-out{
   padding: 40px 0;
  }
@@ -11280,4 +11280,31 @@ div.calendar table td.button {
   border-radius: 50px;
   padding: 0px 15px;
   margin-right: 15px;
+}
+/*FEATURED PRODUCT*/
+.feature-title {
+    padding: 10px 0;
+}
+.featured-product .item {
+    border: 1px solid #c8c6c6;
+    padding-top: 10px;
+}
+.featured-product p {
+    margin: 0;
+    text-align: center;
+    padding: 15px 0;
+}
+.featured-product.owl-carousel .owl-nav button.owl-next,
+.featured-product.owl-carousel .owl-nav button.owl-prev{
+  position: absolute;
+  top: -40px;
+  font-size: 15px;
+  line-height: 100%;
+  outline: none;
+}
+.featured-product.owl-carousel .owl-nav button.owl-next{
+  right: 0;
+}
+.featured-product.owl-carousel .owl-nav button.owl-prev{
+  left: 0;
 }

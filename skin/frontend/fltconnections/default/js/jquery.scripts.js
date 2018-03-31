@@ -30,6 +30,30 @@ jQuery.noConflict();
 	catch(err) {
 	    console.log(err);
 	}
+	/*OWL CAROUSEL*/
+	try{
+		
+		jQuery('.featured-product').owlCarousel({
+		    loop:true,
+		    margin:10,
+		    nav:true,
+		    navText: ["<i class='fa fa-long-arrow-left fa-2x'></i>","<i class='fa fa-long-arrow-right fa-2x'></i>"],
+		    responsive:{
+		        0:{
+		            items:1
+		        },
+		        600:{
+		            items:3
+		        },
+		        1000:{
+		            items:4
+		        }
+		    }
+		})
+	}
+	catch(err){
+		//console.log("Owl Carousel")
+	}
 	/*jQuery('.manual2').magnificPopup({
       type: 'image',
       closeOnContentClick: true,

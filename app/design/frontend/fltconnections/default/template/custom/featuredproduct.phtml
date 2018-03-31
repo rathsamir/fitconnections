@@ -6,16 +6,16 @@ $featuredProducts = Mage::getModel('catalog/product')->getCollection()
     ->addAttributeToFilter('featured', 1);
 ?>
 <section class="greyBg">
-    <div class="main-container col1-layout">
-        <h2 class="align-center page-title">Feature Products</h2>
-        <ul class="products-grid products-grid--max-4-col ">
+    <div class="container">
+        <h2 class="text-center feature-title">Feature Products</h2>
+        <div class="featured-product owl-carousel">
             <?php foreach($featuredProducts as $featuredProduct) : ?>
-                <li class="item">
+                <div class="item">
                     <a href="<?php echo $featuredProduct->getProductUrl();?>" class="displayBlock">
                         <img src="<?php echo Mage::helper('catalog/image')->init($featuredProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $featuredProduct->getName(); ?>"/>
                     </a>
                     <p><?php echo $featuredProduct->getName(); ?>
-                </li>
+                </div>
             <?php endforeach; ?>
-        </ul>
+        </div>
     </div>

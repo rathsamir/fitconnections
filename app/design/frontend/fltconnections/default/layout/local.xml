@@ -14,6 +14,7 @@
 			<!-- Adding Javascripts -->
 			<action method="addItem"> <type>skin_js</type> <name>js/jquery.min.js</name> </action>
 			<action method="addItem"> <type>skin_js</type> <name>js/bootstrap.min.js</name> </action>
+      <action method="addItem"> <type>skin_js</type> <name>js/owl.carousel.min.js</name> </action>
 			<action method="addItem"> <type>skin_js</type> <name>js/jquery.scripts.js</name></action>
 			<!--<action method="addItem"> <type>skin_js</type> <name>js/html5shiv.js</name> <params/><if>lt IE 9</if> </action>
 			<action method="addItem"> <type>skin_js</type> <name>js/respond.min.js</name> <params/><if>lt IE 9</if> </action>-->
@@ -25,6 +26,8 @@
 			<action method="addItem"> <type>skin_css</type> <stylesheet>css/font-awesome.min.css</stylesheet> </action>
 			<!-- Adding animate css -->
 			<action method="addItem"> <type>skin_css</type> <stylesheet>css/animations.css</stylesheet> </action>
+      <!-- Adding owl carousel css -->
+      <action method="addItem"> <type>skin_css</type> <stylesheet>css/owl.carousel.min.css</stylesheet> </action>
 			<!-- Adding the styles.css -->
 			<action method="addItem"> <type>skin_css</type> <stylesheet>css/styles.css</stylesheet> </action>
 		</reference>
