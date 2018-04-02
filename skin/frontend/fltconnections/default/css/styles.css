@@ -11308,3 +11308,6 @@ div.calendar table td.button {
 .featured-product.owl-carousel .owl-nav button.owl-prev{
   left: 0;
 }
+.catalog-category-view span.regular-price{
+ display:none;
+}
