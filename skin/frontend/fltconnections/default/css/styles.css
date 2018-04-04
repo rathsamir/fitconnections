@@ -11288,6 +11288,10 @@ div.calendar table td.button {
 .featured-product .item {
     border: 1px solid #c8c6c6;
     padding-top: 10px;
+    text-align: center;
+}
+.featured-product .item a{
+  display: inline-block;
 }
 .featured-product p {
     margin: 0;
