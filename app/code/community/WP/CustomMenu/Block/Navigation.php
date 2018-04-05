@@ -48,8 +48,14 @@ class WP_CustomMenu_Block_Navigation extends Mage_Catalog_Block_Navigation
 
     public function getTopMenuArray()
     {
-	    $eventUrl = Mage::getUrl('events');
-	    //$htmlTop[] = "<div id='menu' class='menu'><div class='parentMenu'><a class='level0' href='$eventUrl'><span>events</span></a></div></div>";
+	    $locationsUrl = $this->getUrl('locations');
+	    $htmlTop[] = "<div id='menu' class='menu'><div class='parentMenu'><a class='level0' href='$locationsUrl'><span>locations</span></a></div></div>";
+		$supportUrl = $this->getUrl('support');
+	    $htmlTop[] = "<div id='menu' class='menu'><div class='parentMenu'><a class='level0' href='$supportUrl'><span>support</span></a></div></div>";
+		$contactUrl = $this->getUrl('contact-us');
+	    $htmlTop[] = "<div id='menu' class='menu'><div class='parentMenu'><a class='level0' href='$contactUrl'><span>contact us</span></a></div></div>";
+	    $eventUrl = $this->getUrl('events');
+	    $htmlTop[] = "<div id='menu' class='menu'><div class='parentMenu'><a class='level0' href='$eventUrl'><span>events</span></a></div></div>";
 		$this->_topMenu[] = implode("\n", $htmlTop);
         return $this->_topMenu;
     }
