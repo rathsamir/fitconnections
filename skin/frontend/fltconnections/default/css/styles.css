@@ -11218,6 +11218,36 @@ div.calendar table td.button {
   color: #2e8ab8;
  }
  .padding0{ padding: 0px;}
+ .img-class img{ max-width: 100%;}
+ .img-effect {
+  position: relative;
+ }
+ .img-effect .img-class:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  /*background: url(http://demo.flytheme.net/themes/sm_shoppystore/skin/frontend/sm-shoppystore/default/images/heo2.png) no-repeat center center #222222;*/
+  background: #222222;
+  transform: scale(0.5) rotateY(180deg);
+  -webkit-transform: scale(0.5) rotateY(180deg);
+  -moz-transform: scale(0.5) rotateY(180deg);
+  transition: 0.4s;
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  z-index: 99;
+}
+.img-effect:hover .img-class:before {
+  opacity: 0.35;
+  visibility: visible;
+  transform: scale(1) rotateY(0deg);
+  -webkit-transform: scale(1) rotateY(0deg);
+  -moz-transform: scale(1) rotateY(0deg);
+}
  #accordion{}
  #accordion .panel-default{
   border-color:#2e6da4;
