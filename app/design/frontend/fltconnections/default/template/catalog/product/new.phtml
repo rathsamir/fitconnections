@@ -1,0 +1,26 @@
+<?php
+/**
+ * New Page template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+/* @var $this Mage_Catalog_Block_Product_List */
+?>
+<?php
+$newProducts = $this->_getProductCollection();
+?>
+<section class="greyBg">
+    <div class="container-fluid">
+        <h2 class="text-center new-title">New Products</h2>
+        <ul class="products-grid products-grid--max-4-col ">
+            <?php foreach($newProducts as $newProduct) : ?>
+                <div class="item">
+                    <a href="<?php echo $newProduct->getProductUrl();?>" class="displayBlock">
+                        <img src="<?php echo Mage::helper('catalog/image')->init($newProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $newProduct->getName(); ?>"/>
+                    </a>
+                    <p><?php echo $newProduct->getName(); ?>
+                </div>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</section>
