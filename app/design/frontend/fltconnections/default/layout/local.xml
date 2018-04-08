@@ -29,7 +29,7 @@
       <!-- Adding owl carousel css -->
       <action method="addItem"> <type>skin_css</type> <stylesheet>css/owl.carousel.min.css</stylesheet> </action>
 			<!-- Adding the styles.css -->
-			<action method="addItem"> <type>skin_css</type> <stylesheet>css/styles.css</stylesheet> </action>
+      <action method="addItem"> <type>skin_css</type> <stylesheet>css/styles.css</stylesheet> </action>
 		</reference>
 	</default>
 	<catalog_category_layered>

@@ -32,7 +32,14 @@
  */
 ?>
 <?php if($this->canShowBlock()): ?>
-<div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
+<div class="mobile-layer-overlay close-mobile-layer"></div>    
+<div class="block block-main-layer block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
+    <div class="layer-filter-icon visible-sm visible-xs">
+        <a href="javascript:void(0)"><i class="fa fa-sliders"></i></a>
+    </div>
+    <h3 class="title-filter visible-sm visible-xs">Filter Your Selection
+        <span class="close-layer"><i class="fa fa-times"></i></span>
+    </h3>
     <!-- <div class="block-title">
         <strong><span><?php echo $this->__('Shop By') ?></span></strong>
     </div> -->

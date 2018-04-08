@@ -11,8 +11,8 @@ $newProducts = $this->_getProductCollection();
 ?>
 <section class="greyBg">
     <div class="container-fluid">
-        <h2 class="text-center new-title">New Products</h2>
-        <ul class="products-grid products-grid--max-4-col ">
+        <h2 class="text-center new-title">Latest Products</h2>
+        <div class="latest-product owl-carousel">
             <?php foreach($newProducts as $newProduct) : ?>
                 <div class="item">
                     <a href="<?php echo $newProduct->getProductUrl();?>" class="displayBlock">
@@ -21,6 +21,6 @@ $newProducts = $this->_getProductCollection();
                     <p><?php echo $newProduct->getName(); ?>
                 </div>
             <?php endforeach; ?>
-        </ul>
+        </div>
     </div>
 </section>

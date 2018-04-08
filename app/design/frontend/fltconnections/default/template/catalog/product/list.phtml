@@ -151,7 +151,8 @@
             <p class='color-title'><?php echo $this->__('AVAILABLE COLORS')?></p>
             <?php
             foreach ($values as $value) {?>
-                <label class='titlecolor' style='background-color:<?php echo  $value->getTitle()?>'><?php echo  $value->getTitle()?></label>
+                <label data-toggle="tooltip" data-placement="top"
+       title='<?php echo $value->getTitle()?>' class='titlecolor' style='background-color:<?php echo  $value->getTitle()?>'><?php echo  $value->getTitle()?></label>
             <?php
             }
         }
