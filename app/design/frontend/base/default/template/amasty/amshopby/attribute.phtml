@@ -13,7 +13,7 @@ switch ($this->getDisplayType()){
             echo '<li rel="search"><input type="text" class="amshopby_attr_search input-text" onkeyup="amshopby_attr_search(this)" /></li>';
         }
         foreach ($this->getItemsAsArray() as $item){
-            echo '<li '.(isset($item['style']) ? $item['style'] : '').' data-text="' . htmlspecialchars($item['label']) . '"><a class="'.$item['css'].'"' . $item['rel'] . ' href="'.$item['url'].'">'. $item['label'] . $item['count'] . '</a>' . '</li>';
+            echo '<li '.(isset($item['style']) ? $item['style'] : '').' data-text="' . htmlspecialchars($item['label']) . '"><a class="'.$item['css'].'"' . $item['rel'] . ' href="'.$item['url'].'">'. $item['label']. '</a>' . '</li>';
         }
     break;
     

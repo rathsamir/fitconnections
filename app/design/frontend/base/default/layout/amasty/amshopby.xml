@@ -20,7 +20,7 @@
            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
         </reference>
 
-        <reference name="left">
+        <reference name="left_first">
            <block type="amshopby/catalog_layer_view" name="amshopby.navleft" before="-" template="catalog/layer/view.phtml"/> 
         </reference>
         <reference name="content">
@@ -43,7 +43,7 @@
     <catalog_category_layered> 
         <remove name="catalog.leftnav" />
         <remove name="enterprisecatalog.leftnav"/> 
-        <reference name="left">
+        <reference name="left_first">
            <block type="amshopby/catalog_layer_view" name="amshopby.navleft" before="-" template="catalog/layer/view.phtml"/> 
         </reference>
         <reference name="content">
@@ -57,7 +57,7 @@
         <remove name="catalogsearch.leftnav" />
         <remove name="enterprisesearch.leftnav"/> 
         
-        <reference name="left">
+        <reference name="left_first">
            <block type="amshopby/search_layer" name="amshopby.navleft" before="-" template="catalog/layer/view.phtml"/> 
         </reference>  
         <reference name="content">
