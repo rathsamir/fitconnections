@@ -108,6 +108,8 @@ jQuery(document).ready(function() {
 
             var url='<?php echo Mage::getUrl('catalog/product_compare/index').'items/'; ?>'+ prdString + '/uenc/';
             jQuery('#comparelist').attr('action', url);
+			jQuery('#comparelist').attr("target","bugsme");
+			exportwindow = window.open("", "bugsme", "width=800,height=600,resizable=yes");
             jQuery('#comparelist').submit();
         });
     });
