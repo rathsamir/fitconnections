@@ -87,20 +87,30 @@ jQuery.noConflict();
      });
 	/*Layer Nav*/	
 	jQuery('.layer-filter-icon, .close-mobile-layer, .close-layer').click(function(event) { 
-            if(!jQuery('body').hasClass('mobile-layer-shown')) {
-                jQuery('body').addClass('mobile-layer-shown', function() { 
-                    setTimeout(function(){
-                        jQuery(document).one("click",function(e) {
-                            var target = e.target;
-                            if (!jQuery(target).is('.block-main-layer .block') && !jQuery(target).parents().is('.block-main-layer .block')) {
-                                        jQuery('body').removeClass('mobile-layer-shown');
-                            }
-                        });  
-                    }, 111);
-                });
-            } else{
-                jQuery('body').removeClass('mobile-layer-shown');
-            }
-        }); 
+        if(!jQuery('body').hasClass('mobile-layer-shown')) {
+            jQuery('body').addClass('mobile-layer-shown', function() { 
+                setTimeout(function(){
+                    jQuery(document).one("click",function(e) {
+                        var target = e.target;
+                        if (!jQuery(target).is('.block-main-layer .block') && !jQuery(target).parents().is('.block-main-layer .block')) {
+                                    jQuery('body').removeClass('mobile-layer-shown');
+                        }
+                    });  
+                }, 111);
+            });
+        } else{
+            jQuery('body').removeClass('mobile-layer-shown');
+        }
+    });
+    /*Layer Nav Accordian*/
+    jQuery(".block-layered-nav dt").click(function(){
+        if(jQuery(this).next("dd").css("display") == "none"){
+            jQuery(this).next("dd").slideDown(200);
+            jQuery(this).removeClass("closed");
+        } else {
+            jQuery(this).next("dd").slideUp(200);
+            jQuery(this).addClass("closed");
+        }
+    });     
 
 });

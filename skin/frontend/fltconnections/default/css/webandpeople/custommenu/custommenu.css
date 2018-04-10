@@ -378,12 +378,13 @@ html[xmlns] #menu-button, html[xmlns] .parentMenu {
     right: 1%;
     top: 0px;
     display: block;
-    width: 80px;
-    height: 38px;
+    width: 19px;
+    height: 28px;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: 90% 50%;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJxJREFUeNpi/P//PwM66O3tBVF1UNwEwsXFxRjqmBhwg3wgZobSWAE+zcxoNEmaCQKKNDP29PTgkvsAxPxA/BGIBXDZ3A7Ef4D4Pxrmh6rhxyL3E4gbQZqL8AUKDsAG0gfS3AfEf0nU/AuIJ4I0VwIxC8j/aPgjVOFHLHLsQFzDiCeFoQQYqSmMtvGMT/NfNJokzQug9HRcCgACDAC34CnSSWx3zwAAAABJRU5ErkJggg==);
+    border:0 none;
 }
 #custommenu-mobile .button.open {
     background-color: transparent;
