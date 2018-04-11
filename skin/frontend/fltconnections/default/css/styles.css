@@ -3507,7 +3507,7 @@ body {
  * Header
  * ============================================ */
  .contry-changer{padding: 12px 0;}
- .contry-changer .form-group{ width: 83%}
+ .contry-changer .form-group{ width: 83%; display: inline-block;}
  .contry-changer label{
   text-transform: uppercase;
   font-weight: 700;
@@ -3748,6 +3748,10 @@ a.skip-link {
   display: block;
   background: #EDEDED;
 }
+#header-search.skip-content.skip-active {
+  display: block;
+}
+.skip-active ~ .search-block .icon-search
 
 /* ============================================ *
  * Global Header Navigation
@@ -3761,6 +3765,14 @@ a.skip-link {
     color: #636363;
     text-transform: uppercase;
     line-height: 30px;
+  }
+  .icon-search{ display: none;}
+  .search-block{
+    right: auto;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    top: 100%;
   }
 
   #header-account li:last-child a,
@@ -4220,7 +4232,9 @@ a.skip-link {
 
 @media only screen and (max-width: 499px) {
   .skip-cart .count {
-    margin-left: -12px;
+    margin-left: 0;
+    top: 0;
+    right: 9px;
   }
 }
 @media only screen and (min-width: 771px) {
@@ -5261,6 +5275,7 @@ p.product-name a:hover {
     border-bottom: 4px solid transparent;
     border-left: 4px solid #3399cc;
     border-right: none;
+    display: none;
   }
   .block-layered-nav .block-content > dl > dt.last {
     border-bottom-width: 1px;
@@ -5343,13 +5358,13 @@ p.product-name a:hover {
   }
 
   .block-layered-nav dl ol > li > a {
-    color: #636363;
-    background-color: #f4f4f4;
+    /*color: #636363;
+    background-color: #f4f4f4;*/
     padding: 5px 10px;
   }
   .block-layered-nav dl ol > li > a:hover {
     text-decoration: none;
-    background: #ececec;
+    /*background: #ececec;*/
   }
   #header-cart.skip-active {
       background: #FBFBFB;
