@@ -94,12 +94,22 @@ HTML;
             $mobileMenuContentArray[] = $_block->drawCustomMenuMobileItem($_category);
         }
         if (count($mobileMenuContentArray)) {
-            $mobileMenuContent = implode("\n", $mobileMenuContentArray);
+		$locationsUrl = Mage::getUrl('locations');
+	    $htmlTop[] = "<div id='menu-mobile-0' class='menu-mobile level0'><div class='parentMenu'><a href='$locationsUrl'><span>locations</span></a></div></div>";
+		$supportUrl =  Mage::getUrl('support');
+	    $htmlTop[] = "<div id='menu-mobile-0' class='menu-mobile level0'><div class='parentMenu'><a href='$supportUrl'><span>support</span></a></div></div>";
+		$contactUrl =  Mage::getUrl('contact-us');
+	    $htmlTop[] = "<div id='menu-mobile-0' class='menu-mobile level0'><div class='parentMenu'><a href='$contactUrl'><span>contact us</span></a></div></div>";
+	    $eventUrl = Mage::getUrl('events');
+	    $htmlTop[] = "<div id='menu-mobile-0' class='menu-mobile level0'><div class='parentMenu'><a href='$eventUrl'><span>events</span></a></div></div>";
+		$mobileMenu = implode("\n", $htmlTop);
+        $mobileMenuContent = implode("\n", $mobileMenuContentArray);
         }
         // --- Result ---
         $menu = <<<HTML
 $homeLink
 $mobileMenuContent
+$mobileMenu
 <div class="clearBoth"></div>
 HTML;
         $cache->save($menu, $cacheKey, $cacheTags, false);
