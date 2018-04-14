@@ -5262,7 +5262,7 @@ p.product-name a:hover {
     cursor: pointer;
     border-bottom-width: 0;
   }
-  .block-layered-nav .block-content > dl > dt:hover {
+  /*.block-layered-nav .block-content > dl > dt:hover {
     color: #3399cc;
   }
   .block-layered-nav .block-content > dl > dt:after {
@@ -5276,7 +5276,7 @@ p.product-name a:hover {
     border-left: 4px solid #3399cc;
     border-right: none;
     display: none;
-  }
+  }*/
   .block-layered-nav .block-content > dl > dt.last {
     border-bottom-width: 1px;
   }
@@ -5299,6 +5299,7 @@ p.product-name a:hover {
     left: 6px;
     top: 50%;
     margin-top: -3px;
+    display: none;
   }
   .block-layered-nav .block-content.accordion-open > dl > dd.current {
     display: block;
@@ -5382,7 +5383,7 @@ p.product-name a:hover {
     width: 300px;
   }
   .nav-wrapper {
-    background-color: #ededed;
+    background-color: #ededed !important;
   }
 }
 .block-layered-nav .currently .block-subtitle {
@@ -5866,29 +5867,14 @@ padding:40px 0 0 0;
   .product-collateral .toggle-tabs {
     display: block;
     width: 100%;
-    text-align: center;
     position: relative;
+    border-bottom: 5px solid #0c77b1;
   }
   .product-collateral .toggle-tabs li {
     display: inline-block;
     vertical-align: top;
-    border-right: 1px solid transparent;
-    border-left: 1px solid transparent;
     background-color: #ecf0f1;
-    font-weight: 700;
-    font-size: 14px;
     text-transform: uppercase;
-    border:1px solid #ddd;
-    margin-left: -5px;
-  }
-  .product-collateral .toggle-tabs li:first-child {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-  }
-  .product-collateral .toggle-tabs li:last-child {
-    margin-bottom: 0;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
   }
   .product-collateral .toggle-tabs li > span {
     -moz-user-select: none;
@@ -5901,24 +5887,29 @@ padding:40px 0 0 0;
     height: 40px;
     line-height: 40px;
     cursor: pointer;
-    text-transform: uppercase;
-    font-size: 13px;
+    text-transform: none;
+    font-size: 17px;
     position: relative;
-    bottom: -1px;
     color: #000000;
-
-  }
-  .product-collateral .toggle-tabs li.current {
-    
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
   }
   .product-collateral .toggle-tabs li.current > span {
+    color: #ffffff;
+    background:#0c77b1;
   }
-  .product-collateral .toggle-tabs li.current span,
-  .product-collateral .toggle-tabs li:hover span {
-    color: #3399cc;
-  }
-  .product-collateral .toggle-tabs li:first-child {
-   
+  .product-collateral .toggle-tabs li.current > span:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0c77b1;
+    bottom: -14px;
+    left: 50%;
+    margin-left: -5px;
   }
   .product-collateral .toggle-tabs:after {
     content: '';
@@ -11552,4 +11543,66 @@ div.calendar table td.button {
 }
 #custommenu .block1{
   display: none;
+}
+.tab-content p{
+  font-weight: 300;
+  font-size: 17px;
+  background: #0c77b1;
+  padding: 5px 10px;
+  color: #fff;
+  font-family: 'Raleway';
+  margin-bottom: 15px;
+  position: relative;
+}
+.tab-content table{
+  width: 100%;
+}
+.tab-content table td{
+  border-bottom: 1px solid #cccccc;
+}
+.tab-content table p{
+  background: transparent;
+  margin: 0;
+  padding: 10px 15px;
+  color: inherit;
+}
+.tab-content table td:first-child p{
+  
+}
+.tab-content table td:first-child p strong {
+  font-weight: 400;
+}
+.tab-content table td:first-child {
+  background: #f4f4f4;
+}
+.tab-content table td:last-child p{
+  font-family: 'Oswald',sans-serif;;
+  font-size:14px;
+}
+.tab-content p strong {
+    font-weight: 300;
+}
+.tab-content p sup{
+  position: absolute;
+    background: #f7f7f7;
+    color: #337ab7;
+    padding: 14px 15px;
+    border-radius: 35px;
+    font-size: 19px;
+    margin-left: 10px;
+    top: 35px;
+    right: 15px;
+    margin-top: -14px;
+}
+.tab-content ul li {
+    margin-left: 2em;
+    font-family: 'Oswald', sans-serif;
+}
+@media only screen and (max-width: 767px) {
+  .list-product > li{
+    text-align: center;
+  }
+  .list-product > li img{
+    display: inline-block;
+  }
 }
