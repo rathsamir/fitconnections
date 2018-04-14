@@ -150,9 +150,21 @@
             <span class='color'>
             <p class='color-title'><?php echo $this->__('AVAILABLE COLORS')?></p>
             <?php
-            foreach ($values as $value) {?>
+            foreach ($values as $value) {
+			$colors = array(
+    "rose" => "#FFE4E1",
+    "jetblack" => "#050002",
+    'space grey' => '#a5adb0'
+);
+     $color = $value->getTitle();
+    if (array_key_exists(strtolower($color), $colors )) {
+    $color = $colors [strtolower($color)];
+    
+}
+			
+			?>
                 <label data-toggle="tooltip" data-placement="top"
-       title='<?php echo $value->getTitle()?>' class='titlecolor' style='background-color:<?php echo  $value->getTitle()?>'><?php echo  $value->getTitle()?></label>
+       title='<?php echo $value->getTitle()?>' class='titlecolor' style='background-color:<?php echo   $color;?>'><?php echo  $value->getTitle()?></label>
             <?php
             }
         }
