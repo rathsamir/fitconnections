@@ -2167,7 +2167,7 @@ span.weee {
 }
 .item-options dd {
   float: left;
-  padding-left: 10px;
+  padding-left: 0px;
   margin: 0 0 6px;
 }
 
