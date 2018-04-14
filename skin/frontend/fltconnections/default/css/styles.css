@@ -3730,6 +3730,7 @@ a.skip-link {
  */
 .skip-link .label {
   display: none;
+  color: inherit;
 }
 
 @media only screen and (min-width: 500px) {
@@ -4034,7 +4035,7 @@ a.skip-link {
 /* ============================================ *
  * Search - Skip Content
  * ============================================ */
- .search-block{ position: absolute; right: 0; top: 9px;}
+ .search-block{ position: absolute; right: 15px; top: 67px; z-index: 999}
  .icon-search{
   background: url("../images/icon_search.png") no-repeat 0 0;
   display: block;
@@ -11597,6 +11598,21 @@ div.calendar table td.button {
 .tab-content ul li {
     margin-left: 2em;
     font-family: 'Oswald', sans-serif;
+}
+@media only screen and (min-width: 767px) and (max-width: 1200px) {
+  .search-block{
+    top: 93px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .search-block{
+    top: 47px;
+    z-index: 999;
+    width: 100%;
+  }
+  .search-block .icon-search{
+    display: none;
+  }
 }
 @media only screen and (max-width: 767px) {
   .list-product > li{
