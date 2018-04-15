@@ -6041,10 +6041,10 @@ padding:40px 0 0 0;
   .product-view .block-related,
   .product-img-box,
   .product-collateral {
-    width: 100%;
+    /*width: 100%;
     float: none;
     padding-right: 0;
-    padding-left: 0;
+    padding-left: 0;*/
   }
 }
 @media only screen and (min-width: 771px) {
@@ -11594,6 +11594,7 @@ div.calendar table td.button {
     top: 35px;
     right: 15px;
     margin-top: -14px;
+    display: none;
 }
 .tab-content ul li {
     margin-left: 2em;
