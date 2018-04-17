@@ -15,7 +15,54 @@ $featuredProducts = Mage::getModel('catalog/product')->getCollection()
                         <img src="<?php echo Mage::helper('catalog/image')->init($featuredProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $featuredProduct->getName(); ?>"/>
                     </a>
                     <p><?php echo $featuredProduct->getName(); ?>
-					<?php echo $this->getPriceHtml($featuredProduct, true); ?>
+								<?php 
+$product = Mage::getModel('catalog/product')->load($featuredProduct->getId());
+$prodPrice = $product->getPrice();
+if($product->getOptions()){
+    $minPrices=array();
+    $maxPrices=array();
+    foreach ($product->getOptions() as $_option) {
+        switch ($_option->getType()) {
+            case 'field': case 'file': case 'area': case 'date_time': case 'date': case 'time':
+                if($_option->getIsRequire()){
+                    $minPrices[] = ($_option->getPriceType()=='percent') ? $prodPrice*$_option->getPrice()/100 : $_option->getPrice();
+                }
+                $maxPrices[] = ($_option->getPriceType()=='percent') ? $prodPrice*$_option->getPrice()/100 : $_option->getPrice();
+                break;
+            case 'radio': case 'drop_down':
+                $valuePrices=array();
+                foreach ($_option->getValues() as $_value){
+                    $valuePrices[] = ($_value->getPriceType()=='percent') ? $prodPrice*$_value->getPrice()/100 : $_value->getPrice();
+                }
+                sort($valuePrices,SORT_NUMERIC);
+                if($_option->getIsRequire()){
+                    $minPrices[] = $valuePrices[0];
+                }
+                $maxPrices[] = array_pop($valuePrices);
+                break;
+            case 'multiple': case 'checkbox':
+                $valuePrices=array();
+                foreach ($_option->getValues() as $_value){
+                    $valuePrices[] = ($_value->getPriceType()=='percent') ? $prodPrice*$_value->getPrice()/100 : $_value->getPrice();
+                }
+                sort($valuePrices,SORT_NUMERIC);
+                if($_option->getIsRequire()){
+                    $minPrices[] = $valuePrices[0];
+                }
+                $maxPrices[] = array_sum($valuePrices);
+                break;
+        }
+    }
+    $minTotal = $prodPrice + array_sum($minPrices);
+    $maxTotal = $prodPrice + array_sum($maxPrices);
+    if($minTotal==$maxTotal){
+        echo Mage::helper('core')->currency($minTotal);
+    } else {
+        echo Mage::helper('core')->currency($minTotal).'-'.Mage::helper('core')->currency($maxTotal);
+    }
+} else {
+    echo Mage::helper('core')->currency($prodPrice);
+}?>
                 </div>
             <?php endforeach; ?>
         </div>
