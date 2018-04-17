@@ -15,7 +15,9 @@ $featuredProducts = Mage::getModel('catalog/product')->getCollection()
                         <img src="<?php echo Mage::helper('catalog/image')->init($featuredProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $featuredProduct->getName(); ?>"/>
                     </a>
                     <p><?php echo $featuredProduct->getName(); ?>
+					<?php echo $this->getPriceHtml($featuredProduct, true); ?>
                 </div>
             <?php endforeach; ?>
         </div>
     </div>
+	</section>

@@ -19,6 +19,7 @@ $newProducts = $this->_getProductCollection();
                         <img src="<?php echo Mage::helper('catalog/image')->init($newProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $newProduct->getName(); ?>"/>
                     </a>
                     <p><?php echo $newProduct->getName(); ?>
+					<?php echo $this->getPriceHtml($newProduct, true); ?>
                 </div>
             <?php endforeach; ?>
         </div>
