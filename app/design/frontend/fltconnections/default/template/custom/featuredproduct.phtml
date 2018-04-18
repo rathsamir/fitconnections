@@ -14,7 +14,8 @@ $featuredProducts = Mage::getModel('catalog/product')->getCollection()
                     <a href="<?php echo $featuredProduct->getProductUrl();?>" class="displayBlock">
                         <img src="<?php echo Mage::helper('catalog/image')->init($featuredProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $featuredProduct->getName(); ?>"/>
                     </a>
-                    <p><?php echo $featuredProduct->getName(); ?>
+                    <p>
+                    <a class="product-name" href="<?php echo $featuredProduct->getProductUrl();?>"><?php echo $featuredProduct->getName(); ?></a>
 								<?php 
 $product = Mage::getModel('catalog/product')->load($featuredProduct->getId());
 $prodPrice = $product->getPrice();

@@ -18,7 +18,10 @@ $newProducts = $this->_getProductCollection();
                     <a href="<?php echo $newProduct->getProductUrl();?>" class="displayBlock">
                         <img src="<?php echo Mage::helper('catalog/image')->init($newProduct, 'thumbnail')->resize(200,200)?>" alt="<?php echo $newProduct->getName(); ?>"/>
                     </a>
-                    <p><?php echo $newProduct->getName(); ?>
+                    <p>
+                    <a class="product-name" href="<?php echo $newProduct->getProductUrl();?>">
+                        <?php echo $newProduct->getName(); ?>
+                    </a>
 					<?php echo $this->getPriceHtml($newProduct, true); ?>
                 </div>
             <?php endforeach; ?>

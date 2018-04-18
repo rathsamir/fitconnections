@@ -11405,7 +11405,7 @@ div.calendar table td.button {
 .latest-product p {
     margin: 0;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px 0 0 0;
 }
 .latest-product.owl-carousel .owl-nav button.owl-next,
 .latest-product.owl-carousel .owl-nav button.owl-prev{
@@ -11622,4 +11622,20 @@ div.calendar table td.button {
   .list-product > li img{
     display: inline-block;
   }
+}
+#menu4,.latest-product .regular-price,#menu-mobile-4{
+  display: none;
+}
+.featured-product .item a.product-name{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.featured-product .item span.price {
+    font-family: 'Oswald';
+    font-size: 15px;
+    padding: 0 6px;
+}
+#header-nav.skip-content.skip-active #menu-content{
+  display: block !important;
 }
